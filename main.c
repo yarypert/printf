@@ -6,8 +6,14 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/16 14:26:24 by yarypert          #+#    #+#             */
-/*   Updated: 2017/05/16 14:26:25 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/05/16 15:45:13 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
 
+int main(void)
+{
+	ft_printf("%d%s%x", 25, "coucou", 255);
+	return (0);
+}

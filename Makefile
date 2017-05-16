@@ -4,7 +4,7 @@ COMPIL = gcc
 
 SRCS = ft_printf.c main.c parse.c
 
-OBJ = ft_printf.o main.o arse.o
+OBJ = ft_printf.o main.o parse.o
 
 INCLUDES = -I ./
 
