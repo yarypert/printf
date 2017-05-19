@@ -14,6 +14,12 @@
 
 int main(void)
 {
+	ft_printf("%-d%-s%-x", 25, "coucou", 255);
+	ft_printf("%-%\n\n%-s%-x", 25, "coucou", 255);
 	ft_printf("%d%s%x", 25, "coucou", 255);
+	ft_printf("%d%s%x%s%s%d");
+	ft_printf("%d", 25);
+	ft_printf("%s","coucou");
+	ft_printf("%%%d");
 	return (0);
 }
