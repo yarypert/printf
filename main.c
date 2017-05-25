@@ -14,12 +14,40 @@
 
 int main(void)
 {
-	ft_printf("%-d%-s%-x", 25, "coucou", 255);
-	ft_printf("%-%\n\n%-s%-x", 25, "coucou", 255);
-	ft_printf("%d%s%x", 25, "coucou", 255);
-	ft_printf("%d%s%x%s%s%d");
-	ft_printf("%d", 25);
-	ft_printf("%s","coucou");
-	ft_printf("%%%d");
-	return (0);
+	ft_putendl("test %s");
+	ft_putstr("printf =\n");
+	dprintf(1, "%s", "le test est reussi");
+	ft_putchar('\n');
+	ft_putstr("ft_printf =\n");
+	ft_printf("%s", "le test est reussi");
+	ft_putchar('\n');
+	ft_putchar('\n');
+
+	ft_putendl("test %d");
+	ft_putstr("printf =\n");
+	dprintf(1, "%d", 42);
+	ft_putchar('\n');
+	ft_putstr("ft_printf =\n");
+	ft_printf("%d", 42);
+	ft_putchar('\n');
+	ft_putchar('\n');
+
+	ft_putendl("test %c");
+	ft_putstr("printf =\n");
+	dprintf(1, "%c", 'a');
+	ft_putchar('\n');
+	ft_putstr("ft_printf =\n");
+	ft_printf("%c", 'a');
+	ft_putchar('\n');
+	ft_putchar('\n');
+
+	ft_putendl("test %c 2");
+	ft_putstr("printf =\n");
+	dprintf(1, "%c", 48);
+	ft_putchar('\n');
+	ft_putstr("ft_printf =\n");
+	ft_printf("%c", 48);
+	ft_putchar('\n');
+	ft_putchar('\n');
+return (0);
 }

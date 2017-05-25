@@ -15,8 +15,14 @@
 int		ft_printf(const char *format, ...)
 {
 	int		ret;
+	va_list args;
+
 	ret = 0;
-	
-	parse_format((char *)format);
+	if (format)
+	{
+		va_start(args, format);
+		ret = analyse(&args, (char *)format);
+		va_end(args);
+	}
 	return(ret);
 }

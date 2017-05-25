@@ -12,47 +12,45 @@
 
 #include "ft_printf.h"
 
-int		count_flags(char *str)
+void	first_check(char *str)
 {
 	int i;
-	int count;
-	int close;
 
 	i = 0;
-	count = 0;
-	close = 1;
 	while (str[i])
 	{
-		if (str[i] == '%' && close == 1)
+		if (str[i] != 's' && str[i] != 'S' && str[i] != 'p' &&
+		str[i] != 'd' && str[i] != 'D' && str[i] != 'i' && str[i] != 'o' &&
+		str[i] != 'O' && str[i] != 'u' && str[i] != 'U' && str[i] != 'x' &&
+		str[i] != 'h' && str[i] != 'l' && str[i] != 'j' && str[i] != 'z' &&
+		str[i] != '#' && str[i] != '-' && str[i] != '+' && str[i] != '0' &&
+		str[i] != 'X' && str[i] != 'c' && str[i] != 'C' && str[i] != '%')
 		{
-			close = 0;
-			count++;
-		}
-		else if (str[i] == 's' || str[i] == 'S' || str[i] == 'p' ||
-		str[i] == 'd' || str[i] == 'D' || str[i] == 'i' || str[i] == 'o' ||
-		str[i] == 'O' || str[i] == 'u' || str[i] == 'U' || str[i] == 'x' ||
-		str[i] == 'X' || str[i] == 'c' || str[i] == 'C' || str[i] == '%')
-			close = 1;
-		else
-		{
-			close = 1;
-			i++;
+			ft_putendl("invalid format");
+			exit(0);
 		}
 		i++;
 	}
-	return (count);
 }
 
-char **parse_format(char *str)
+char **parse_format(char *str, va_list *args)
 {
+	int i = 0;
 	char	**flags;
-	int		count;
+	int		count = 0;
 	
-	ft_putnbr(count_flags(str));
-	ft_putchar(' ');
-	ft_putstr(str);
-	ft_putchar('\n');
+	//count = count_flags(str);
 	flags = ft_strsplit(str,'%');
-
+	while(flags[i])
+	{
+		count++;
+		i++;
+	}
+	i = 0;
+	while (i < count)
+	{
+		dispatcher(flags[i], args);
+		i++;
+	}
 	return (flags);
 }
