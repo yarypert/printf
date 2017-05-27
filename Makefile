@@ -2,9 +2,9 @@ NAME = ft_printf
 
 COMPIL = gcc
 
-SRCS = ft_printf.c main.c parse.c analyse.c dispatcher.c flags.c flags2.c flags3.c
+SRCS = ft_printf.c main.c parse.c dispatcher.c flags.c flags2.c flags3.c
 
-OBJ = ft_printf.o main.o parse.o analyse.o dispatcher.o flags.o flags2.o flags3.o
+OBJ = ft_printf.o main.o parse.o dispatcher.o flags.o flags2.o flags3.o
 
 INCLUDES = -I ./
 

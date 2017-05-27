@@ -33,19 +33,20 @@ void	first_check(char *str)
 	}
 }
 
-char **parse_format(char *str, va_list *args)
+char	**parse_format(char *str, va_list *args)
 {
 	int i = 0;
 	char	**flags;
 	int		count = 0;
-	
-	//count = count_flags(str);
-	flags = ft_strsplit(str,'%');
+
+	flags = ft_flagsplit(str);
 	while(flags[i])
 	{
-		count++;
+		if(flags[i][0]  == '%')
+			count++;
 		i++;
 	}
+	ft_putnbr(count);
 	i = 0;
 	while (i < count)
 	{

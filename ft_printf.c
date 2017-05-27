@@ -21,7 +21,7 @@ int		ft_printf(const char *format, ...)
 	if (format)
 	{
 		va_start(args, format);
-		ret = analyse(&args, (char *)format);
+		ret = parse_format((char *)format, &args);
 		va_end(args);
 	}
 	return(ret);

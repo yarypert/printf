@@ -49,5 +49,14 @@ int main(void)
 	ft_printf("%c", 48);
 	ft_putchar('\n');
 	ft_putchar('\n');
+
+	ft_putendl("test multiflags");
+	ft_putstr("printf =\n");
+	dprintf(1, "coucou%s%d%c", "test", 42, '0');
+	ft_putchar('\n');
+	ft_putstr("ft_printf =\n");
+	ft_printf("coucou%s%d%c", "test", 42, '0');
+	ft_putchar('\n');
+	ft_putchar('\n');
 return (0);
 }

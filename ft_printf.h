@@ -17,6 +17,12 @@
 # include <stdarg.h>
 # include <stdio.h>
 
+typedef struct	s_env
+{
+	int bn;
+
+}				t_env;
+
 int		ft_printf(const char *format, ...);
 char	**parse_format(char *str, va_list *args);
 void	first_check(char *str);
