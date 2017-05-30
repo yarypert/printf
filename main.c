@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/16 14:26:24 by yarypert          #+#    #+#             */
-/*   Updated: 2017/05/16 15:45:13 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/05/30 04:57:24 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int main(void)
 	dprintf(1, "coucou%s%d%c", "test", 42, '0');
 	ft_putchar('\n');
 	ft_putstr("ft_printf =\n");
-	ft_printf("coucou%s%d%c", "test", 42, '0');
+	ft_printf("coucou%scoucou%dcoucou%ccoucou", "test", 42, '0');
 	ft_putchar('\n');
 	ft_putchar('\n');
 return (0);

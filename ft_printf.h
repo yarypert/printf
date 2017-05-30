@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/11 04:03:48 by yarypert          #+#    #+#             */
-/*   Updated: 2017/05/16 14:53:52 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/05/30 05:18:46 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ void	flag_X(va_list *args, int bn);
 void	flag_c(va_list *args, int bn);
 void	flag_C(va_list *args, int bn);
 void	if_bn(int bn);
+void	print_tab(char **tab);
 
 #endif
