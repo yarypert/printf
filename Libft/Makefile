@@ -32,6 +32,7 @@ SRC = ft_atoi.c ft_bzero.c ft_factorial.c ft_find_next_prime.c ft_is_prime.c\
 	  ft_strnequ.c ft_strnew.c ft_strnstr.c ft_strrchr.c ft_strrev.c\
 	  ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c ft_strupcase.c\
 	  ft_tolower.c ft_toupper.c ft_void.c get_next_line.c ft_abs.c ft_error.c\
+	  ft_strreplace.c\
 
 OBJ = ${SRC:c=o}
 

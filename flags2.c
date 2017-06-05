@@ -1,31 +1,21 @@
 #include "ft_printf.h"
 
-void	flag_i(va_list *args, int bn)
+void	flag_i(t_env *env, int i)
 {
-	if_bn(bn);
-	
 }
 
-void	flag_o(va_list *args, int bn)
+void	flag_o(t_env *env, int i)
 {
-	if_bn(bn);
-	
 }
 
-void	flag_O(va_list *args, int bn)
+void	flag_O(t_env *env, int i)
 {
-	if_bn(bn);
-	
 }
 
-void	flag_U(va_list *args, int bn)
+void	flag_U(t_env *env, int i)
 {
-	if_bn(bn);
-	
 }
 
-void	flag_x(va_list *args, int bn)
+void	flag_x(t_env *env, int i)
 {
-	if_bn(bn);
-	
 }

@@ -15,14 +15,15 @@
 int		ft_printf(const char *format, ...)
 {
 	int		ret;
-	va_list args;
-
+	int		i;
+	t_env	env;
 	ret = 0;
+	i = 0;
 	if (format)
 	{
-		va_start(args, format);
-		ret = parse_format((char *)format, &args);
-		va_end(args);
+		va_start(env.args, format);
+		ret = parse_format((char *)format, &env);
+		va_end(env.args);
 	}
 	return(ret);
 }

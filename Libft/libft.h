@@ -107,6 +107,7 @@ char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strrev(char *str);
+char				*ft_strreplace(char *s1, char *old, char *new);
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));

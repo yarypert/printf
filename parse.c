@@ -33,25 +33,24 @@ void	first_check(char *str)
 	}
 }
 
-char	**parse_format(char *str, va_list *args)
+void	print(char **tab, int count)
 {
 	int i = 0;
-	char	**flags;
-	int		count = 0;
+	while(i < count)
+	{
+		printf("%s", tab[i]);
+		i++;
+	}
+}
 
-	flags = ft_flagsplit(str);
-	while(flags[i])
-	{
-		if(flags[i][0]  == '%')
-			count++;
-		i++;
-	}
-	ft_putnbr(count);
-	i = 0;
-	while (i < count)
-	{
-		dispatcher(flags[i], args);
-		i++;
-	}
-	return (flags);
+int		parse_format(char *str, t_env *env)
+{
+	int i = 0;
+	int ret = 0;
+	env->flag_nb = countflags(str);
+	env->flags = resplit(flagsplit(str));
+	print(env->flags,env->flag_nb);
+	//dispatcher1(env);
+	print(env->flags, env->flag_nb);
+	return (ret);
 }

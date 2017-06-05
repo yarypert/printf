@@ -14,49 +14,49 @@
 
 int main(void)
 {
-	ft_putendl("test %s");
-	ft_putstr("printf =\n");
-	dprintf(1, "%s", "le test est reussi");
-	ft_putchar('\n');
-	ft_putstr("ft_printf =\n");
+	printf("test s\n");
+	printf("printf =\n");
+	printf("%s", "le test est reussi");
+	printf("\n");
+	printf("ft_printf =\n");
 	ft_printf("%s", "le test est reussi");
-	ft_putchar('\n');
-	ft_putchar('\n');
+	printf("\n");
+	printf("\n");
 
-	ft_putendl("test %d");
-	ft_putstr("printf =\n");
-	dprintf(1, "%d", 42);
-	ft_putchar('\n');
-	ft_putstr("ft_printf =\n");
+	printf("test d\n");
+	printf("printf =\n");
+	printf("%d", 42);
+	printf("\n");
+	printf("ft_printf =\n");
 	ft_printf("%d", 42);
-	ft_putchar('\n');
-	ft_putchar('\n');
+	printf("\n");
+	printf("\n");
 
-	ft_putendl("test %c");
-	ft_putstr("printf =\n");
-	dprintf(1, "%c", 'a');
-	ft_putchar('\n');
-	ft_putstr("ft_printf =\n");
-	ft_printf("%c", 'a');
-	ft_putchar('\n');
-	ft_putchar('\n');
+	printf("test c\n");
+	printf("printf =\n");
+	printf("%c", 'a');
+	printf("\n");
+	printf("ft_printf =\n");
+	ft_printf("%c", "a");
+	printf("\n");
+	printf("\n");
 
-	ft_putendl("test %c 2");
-	ft_putstr("printf =\n");
-	dprintf(1, "%c", 48);
-	ft_putchar('\n');
-	ft_putstr("ft_printf =\n");
+	printf("test c 2\n");
+	printf("printf =\n");
+	printf("%c", 48);
+	printf("\n");
+	printf("ft_printf =\n");
 	ft_printf("%c", 48);
-	ft_putchar('\n');
-	ft_putchar('\n');
+	printf("\n");
+	printf("\n");
 
-	ft_putendl("test multiflags");
-	ft_putstr("printf =\n");
-	dprintf(1, "coucou%s%d%c", "test", 42, '0');
-	ft_putchar('\n');
-	ft_putstr("ft_printf =\n");
-	ft_printf("coucou%scoucou%dcoucou%ccoucou", "test", 42, '0');
-	ft_putchar('\n');
-	ft_putchar('\n');
+	printf("test multiflags\n");
+	printf("printf =\n");
+	printf("coucou%s%d%c", "test", 42, '0');
+	printf("\n");
+	printf("ft_printf =\n");
+	ft_printf("coucou%s%d%c", "test", 42, '0');
+	printf("\n");
+	printf("\n");
 return (0);
 }
