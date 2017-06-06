@@ -9,63 +9,106 @@ int		is_close(char c)
 	return(0);
 }
 
-int count_flags(char *str)
+void	len_flags(t_env *env)
 {
-	int		count;
 	int		i = 0;
 	int		open_flag;
 	int		open_str;
-	i = 0;
-	count = 0;
+	int		j = 0;
 	open_flag = 0;
 	open_str = 0;
-	if(str[0] == '%')
+	if(env->format[0] == '%')
 		open_flag = 1;
 	else
 		open_str = 1;
-	while (str[i])
+	while (env->format[i])
 	{
-		if(open_str == 0 && str[i] != '%')
+		if(open_str == 0 && env->format[i] != '%')
 		{
 			open_str = 1;
 			i++;
 		}
-		if(open_str == 1 && (str[i + 1] == '%' || str[i + 1] == '\0'))
+		if(open_str == 1 && (env->format[i + 1] == '%' || env->format[i + 1] == '\0'))
 		{
 			open_str = 0;
-			count++;
+			env->flag_len[j] = i;
+			j++;
 		}
-
-		if(str[i] == '%')
+		if(env->format[i] == '%')
 		{
 			open_flag = 1;
 			open_str = 0;
 			i++;
 		}
-		if (is_close(str[i]) && open_flag == 1)
+		if (is_close(env->format[i]) && open_flag == 1)
 		{
 			open_flag = 0;
-			count++;
+			env->flag_len[j] = i;
+			j++;
 		}
 			i++;
 	}
-	return(count);
 }
 
 
-char	**flagsplit(char *format)
+void	count_flags(t_env *env)
 {
-	char **tabformat;
-	int count;
-	count = count_flags(format);
-	ft_putnbr(count);
-	return(tabformat);
+	int		i = 0;
+	int		open_flag;
+	int		open_str;
+	i = 0;
+	env->count = 0;
+	open_flag = 0;
+	open_str = 0;
+	if(env->format[0] == '%')
+		open_flag = 1;
+	else
+		open_str = 1;
+	while (env->format[i])
+	{
+		if(open_str == 0 && env->format[i] != '%')
+		{
+			open_str = 1;
+			i++;
+		}
+		if(open_str == 1 && (env->format[i + 1] == '%' || env->format[i + 1] == '\0'))
+		{
+			open_str = 0;
+			env->count++;
+		}
+		if(env->format[i] == '%')
+		{
+			open_flag = 1;
+			open_str = 0;
+			i++;
+		}
+		if (is_close(env->format[i]) && open_flag == 1)
+		{
+			open_flag = 0;
+			env->count++;
+		}
+			i++;
+	}
+}
+
+
+void	flagsplit(t_env *env)
+{
+	count_flags(env);
+	env->flag_len = (int *)malloc(sizeof(int) * env->count);
+	len_flags(env);
+	int i = 0;
+	while (i < env->count)
+	{
+		ft_putnbr(env->flag_len[i] + 1);
+		ft_putchar('\n');
+		i++;
+	}
 }
 
 int main(int argc, char **argv)
 {
-	char *format;
-	char **tabformat;
-	format = (char *)argv[1];
-	tabformat = flagsplit(format);
+	t_env	env;
+	env.format = (char *)argv[1];
+	flagsplit(&env);
 }

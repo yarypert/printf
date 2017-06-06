@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/11 04:03:48 by yarypert          #+#    #+#             */
-/*   Updated: 2017/06/06 09:00:45 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/06/06 14:26:58 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,15 @@
 typedef struct	s_env
 {
 	va_list	args;
-	int		flag_nb;
-	char **flags;
+	char	*format;
+	char	**tabformat;
+	int		count;
+	int		*flag_len;
 }				t_env;
 
 int		ft_printf(const char *format, ...);
 int		parse_format(char *str, t_env *env);
 void	first_check(char *str);
-int		count_flags(char *str);
 void	dispatcher1(t_env *env);
 void	dispatcher2(t_env *env, int i);
 void	dispatcher3(t_env *env, int i);
