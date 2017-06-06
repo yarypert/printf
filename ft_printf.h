@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/11 04:03:48 by yarypert          #+#    #+#             */
-/*   Updated: 2017/05/30 05:18:46 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/06/06 09:00:45 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,5 @@ void	flag_X(t_env *env, int i);
 void	flag_c(t_env *env, int i);
 void	flag_C(t_env *env, int i);
 void	print_tab(char **tab);
-char	**flagsplit(char *str);
-char	**resplit(char **str, int flag_nb, int *flag_len);
-int		*lenflags(char *str, int count);
-int		*lenflags2(char *str, int *len, int count);
-int		countflags(char *str);
 
 #endif

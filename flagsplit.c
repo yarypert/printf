@@ -2,14 +2,12 @@
 
 int		is_close(char c)
 {
-		if (c == 's' || c == 'S' || c == 'p' || c == 'd' ||
-		c == 'D' || c == 'i' || c == 'o' || c == 'O' ||
-		c == 'u' || c == 'U' || c == 'x' || c == 'X' ||
-		c == 'c' || c == 'C' || c == '%')
-			return(1);
-		return(0);
+	if (c == 's' || c == 'S' || c == 'p' || c == 'd' || c == 'D' ||
+			c == 'i' || c == 'o' || c == 'O' || c == 'u' || c == 'U' ||
+			c == 'x' || c == 'X' || c == 'c' || c == 'C' || c == '%')
+		return(1);
+	return(0);
 }
-
 
 int		countflags(char *str)
 {
@@ -103,25 +101,185 @@ char	**flagsplit(char *str)
 	while (i < flag_nb)
 	{
 		ret[i] = (char *)malloc(sizeof(char) * flag_len[i] + 1);
-		ret[i] = ft_strsub(str,j,flag_len[i]);
+		ret[i] = ft_strsub(str, j, flag_len[i]);
 		j = j + flag_len[i];
 		i++;
 	}
 	return(ret);
 }
 
-char	**resplit(char **str, int flag_nb, int *flag_len)
+int		recount(char **str ,int flag_nb)
 {
+	int i = 0;
+	int j;
+	int recount = 0;
+	int openstr;
+	int openperc;
+	while (i < flag_nb)
+	{
+		j = 0;
+		if(str[i][0] == '%')
+		{
+			openperc = 1;
+			openstr = 0;
+		}
+		else
+		{
+			openstr = 1;
+			openperc = 0;
+			recount++;
+		}
+		while (str[i][j])
+		{
+			if (str[i][j] != '#' && str[i][j] != '0' && str[i][j] != '-' && str[i][j] != '+')
+			{
+				if (!((is_close(str[i][j])) && (str[i][j-1] == '#' || str[i][j-1] == '-' || str[i][j-1] == '+' || str[i][j-1] == '0')))
+				{
+					if(openperc == 0 && openstr == 0 && str[i][j] != '%')
+					{
+						openstr = 1;
+						recount++;
+					}
+					if(openperc == 1 && is_close(str[i][j]))
+					{
+						openperc = 0;
+						recount++;
+						j++;
+					}
+					if(openstr == 1 && (str[i][j + 1] == '%'))
+					{
+						openstr = 0;
+						recount++;
+					}
+				}
+			}
+			j++;
+		}
+		i++;
+	}
+	return(recount);
+}
+
+int		*relen(char **str ,int flag_nb, int *relen_flag)
+{
+	int i = 0;
+	int j;
+	int k = 0;
+	int l = 0;
+	int openstr;
+	int openperc;
+	while (i < flag_nb)
+	{
+		j = 0;
+		if(str[i][0] == '%')
+		{
+			openperc = 1;
+			openstr = 0;
+		}
+		else
+		{
+			openstr = 1;
+			openperc = 0;
+			relen_flag[k] = l;
+			k++;
+		}
+		while (str[i][j])
+		{
+			if (str[i][j] != '#' && str[i][j] != '0' && str[i][j] != '-' && str[i][j] != '+')
+			{
+				if (!((is_close(str[i][j])) && (str[i][j-1] == '#' || str[i][j-1] == '-' || str[i][j-1] == '+' || str[i][j-1] == '0')))
+				{
+					if(openperc == 0 && openstr == 0 && str[i][j] != '%')
+					{
+						openstr = 1;
+						relen_flag[k] = l;
+						k++;
+					}
+					if(openperc == 1 && is_close(str[i][j]))
+					{
+						openperc = 0;
+						relen_flag[k] = l;
+						k++;
+						j++;
+						l++;
+					}
+					if(openstr == 1 && (str[i][j + 1] == '%'))
+					{
+						openstr = 0;
+						relen_flag[k] = l + 1;
+						k++;
+					}
+				}
+			}
+			j++;
+			l++;
+		}
+		i++;
+	}
+	return(relen_flag);
+}
+
+char	**reflagsplit(char *str,int flag_nb,int *flag_len)
+{
+	char	**ret;
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 0;
+	ret = (char **)malloc(sizeof(char *) * flag_nb + 1);
+	while (i < flag_nb)
+	{
+		ret[i] = (char *)malloc(sizeof(char) * flag_len[i] + 1);
+		ret[i] = ft_strsub(str, j, flag_len[i]);
+		j = j + flag_len[i];
+		i++;
+	}
+	return(ret);
 }
 
 int		main(int argc, char **argv)
 {
 	int flag_nb;
 	char **tab;
+	int *flag_len;
+	int recount_flag;
+	int *relen_flag;
 	flag_nb = countflags(argv[1]);
+	flag_len = lenflags(argv[1], flag_nb);
+	flag_len = lenflags2(argv[1], flag_len, flag_nb);
 	tab = flagsplit(argv[1]);
+
 	int i = 0;
 	while (i < flag_nb)
+	{
+		ft_putendl(tab[i]);
+		i++;
+	}
+
+	recount_flag = recount(tab, flag_nb);
+	relen_flag = (int *)malloc(sizeof(int) * recount_flag);
+	relen_flag = relen(tab, flag_nb, relen_flag);
+	relen_flag = lenflags2(argv[1], relen_flag, recount_flag);
+	tab = reflagsplit(argv[1], recount_flag, relen_flag);
+
+
+	ft_putnbr(recount_flag);
+	ft_putchar('\n');
+	ft_putchar('\n');
+	ft_putchar('\n');
+	i = 0;
+	while (i < recount_flag)
+	{
+		ft_putnbr(relen_flag[i]);
+		ft_putchar('\n');
+		i++;
+	}
+	ft_putchar('\n');
+	ft_putchar('\n');
+
+	i = 0;
+	while (i < recount_flag)
 	{
 		ft_putendl(tab[i]);
 		i++;
