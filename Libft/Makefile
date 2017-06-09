@@ -6,7 +6,7 @@
 #    By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/06 00:55:05 by yarypert          #+#    #+#              #
-#    Updated: 2017/04/18 07:11:50 by yarypert         ###   ########.fr        #
+#    Updated: 2017/06/09 07:42:27 by yarypert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,8 @@ SRC = ft_atoi.c ft_bzero.c ft_factorial.c ft_find_next_prime.c ft_is_prime.c\
 	  ft_strnequ.c ft_strnew.c ft_strnstr.c ft_strrchr.c ft_strrev.c\
 	  ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c ft_strupcase.c\
 	  ft_tolower.c ft_toupper.c ft_void.c get_next_line.c ft_abs.c ft_error.c\
-	  ft_strreplace.c\
+	  ft_strreplace.c ft_putwchar.c ft_putwchar_fd.c ft_putwstr.c\
+	  ft_putwstr_fd.c\
 
 OBJ = ${SRC:c=o}
 

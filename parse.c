@@ -6,11 +6,11 @@
 /*   By: aancel <aancel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 02:49:45 by aancel            #+#    #+#             */
-/*   Updated: 2017/06/09 03:16:39 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/06/09 04:43:55 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 int		iscc(char c)
 {
@@ -72,14 +72,4 @@ t_lst	*ftp_parsing(char *str)
 			break;
 	}
 	return (lst);
-}
-
-int		main(int argc, char **argv)
-{
-	t_lst *lst;
-
-	argc += 0;
-	lst = NULL;
-	lst = ftp_parsing(argv[1]);
-	return (0);
 }

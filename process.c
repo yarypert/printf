@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   process.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/11 03:53:47 by yarypert          #+#    #+#             */
-/*   Updated: 2017/06/09 05:05:55 by yarypert         ###   ########.fr       */
+/*   Created: 2017/06/09 03:30:54 by yarypert          #+#    #+#             */
+/*   Updated: 2017/06/09 05:06:40 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_printf(const char *format, ...)
+int		process(t_env *env, t_lst *lst)
 {
-	t_env	env;
-	env.ret = 0;
-	env.format = (char *)format;
-	t_lst	*lst;
-	lst = NULL;
-	if (format)
-	{
-		va_start(env.args, format);
-		env.ret = process(&env, lst);
-		va_end(env.args);
-	}
-	return(env.ret);
+	lst = ftp_parsing(env->format);
+	check_lst(lst);
+	return (env->ret);
 }

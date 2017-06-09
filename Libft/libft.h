@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 00:49:27 by yarypert          #+#    #+#             */
-/*   Updated: 2017/03/22 08:14:02 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/06/09 07:37:59 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include <wchar.h>
 
 typedef struct		s_list
 {
@@ -36,11 +37,15 @@ void				ft_bzero(void *s, size_t n);
 void				ft_memdel(void **ap);
 void				ft_strdel(char **as);
 void				ft_putchar(char c);
+void				ft_putwchar(wchar_t c);
 void				ft_putstr(char *str);
+void				ft_putwstr(wchar_t *s);
 void				ft_putendl(char const *str);
 void				ft_putnbr(int n);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
+void				ft_putwstr_fd(wchar_t *s, int fd);
+void				ft_putwchar_fd(wchar_t c, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_strclr(char *s);
