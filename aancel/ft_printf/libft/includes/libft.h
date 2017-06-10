@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aancel <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: aancel <aancel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 12:31:12 by aancel            #+#    #+#             */
-/*   Updated: 2016/11/22 22:50:49 by aancel           ###   ########.fr       */
+/*   Updated: 2017/06/10 19:09:34 by aancel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <wchar.h>
 
 # define ABS(x)		((x) < 0 ? -(x) : (x))
 # define BUFF_SIZE 1000
@@ -104,5 +105,9 @@ int					ft_count_word(char const *str, char c);
 char				*ft_strrev(char *str);
 int					get_next_line(int const fd, char **line);
 size_t				ft_strlenre(const char *str, const char c);
+void				ft_putwchar(wchar_t c);
+void				ft_putwchar_fd(wchar_t c, int fd);
+void				ft_putwstr(wchar_t *s);
+void				ft_putwstr_fd(wchar_t *s,int fd);
 
 #endif

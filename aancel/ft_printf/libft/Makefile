@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aancel <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: aancel <aancel@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/09 13:34:05 by aancel            #+#    #+#              #
-#    Updated: 2016/12/26 12:58:03 by aancel           ###   ########.fr        #
+#    Updated: 2017/06/10 19:12:25 by aancel           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,7 +77,11 @@ SRC = ft_atoi.c \
 	  ft_puttab_fd.c \
 	  ft_create_tab.c \
 	  ft_gnl.c \
-	  ft_strlenre.c
+	  ft_strlenre.c \
+	  ft_putwchar.c \
+	  ft_putwchar_fd.c \
+	  ft_putwstr.c \
+	  ft_putwstr_fd.c
 
 OBJ = ft_atoi.o \
 	  ft_bzero.o \
@@ -144,7 +148,11 @@ OBJ = ft_atoi.o \
 	  ft_puttab_fd.o \
 	  ft_create_tab.o \
 	  ft_gnl.o \
-	  ft_strlenre.o
+	  ft_strlenre.o \
+	  ft_putwchar.o \
+	  ft_putwchar_fd.o \
+	  ft_putwstr.o \
+	  ft_putwstr_fd.o
 
 CFLAGS = -Wall -Wextra -Werror -I ./includes/libft.h
 all: $(NAME)
