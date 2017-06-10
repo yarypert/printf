@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/16 14:26:24 by yarypert          #+#    #+#             */
-/*   Updated: 2017/06/10 14:37:29 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/06/10 19:57:45 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,10 @@ int main(void)
 
 	printf("test multiflags\n");
 	printf("printf =\n");
-	printf("coucou%s%d%c%c", "test", 42, '0', 'a');
+	printf("coucou %s %d %c %c %x %o", "test", 42, '0', 'a', 2485, 18);
 	printf("\n");
 	printf("ft_printf =\n");
-	ft_printf("coucou%s%d%c%c", "test", 42, '0', 'a');
+	ft_printf("coucou %s %d %c %c %x %o %b", "test", 42, '0', 'a', 2485, 18, 125);
 	printf("\n");
 	printf("\n");
 return (0);

@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/10 12:13:26 by yarypert          #+#    #+#             */
-/*   Updated: 2017/06/10 14:08:10 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/06/10 19:56:29 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,8 @@ void	ft_chooseflag(t_env *env, t_lst *lst)
 		flag_bigc(env, lst);
 	if(lst->str[ft_strlen(lst->str) - 1] == 'b')
 		flag_b(env, lst);
+	if(lst->str[ft_strlen(lst->str) - 1] == 'o')
+		flag_o(env, lst);
+	if(lst->str[ft_strlen(lst->str) - 1] == 'x')
+		flag_x(env, lst);
 }

@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 00:49:27 by yarypert          #+#    #+#             */
-/*   Updated: 2017/06/10 14:24:49 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/06/10 19:48:02 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ size_t				ft_strlcat(char *dst, const char *src, size_t size);
 size_t				ft_strlen(char const *str);
 
 char				**ft_strsplit(char const *s, char c);
+char				*ft_itoa_base(int value, int base);
 char				*ft_ctoa(char c);
 char				*ft_itobin(int nb);
 char				*ft_lltobin(long long nb);
