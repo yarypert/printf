@@ -1,21 +1,21 @@
 #include "ft_printf.h"
 
-void	flag_i(t_env *env, int i)
+void	flag_o(t_env *env, t_lst *lst)
 {
 }
 
-void	flag_o(t_env *env, int i)
+void	flag_bigo(t_env *env, t_lst *lst)
 {
 }
 
-void	flag_O(t_env *env, int i)
+void	flag_bigu(t_env *env, t_lst *lst)
 {
 }
 
-void	flag_U(t_env *env, int i)
+void	flag_x(t_env *env, t_lst *lst)
 {
 }
 
-void	flag_x(t_env *env, int i)
+void	flag_bigx(t_env *env, t_lst *lst)
 {
 }

@@ -1,14 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   printflags.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/06/10 11:51:53 by yarypert          #+#    #+#             */
+/*   Updated: 2017/06/10 15:25:42 by yarypert         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-void	check_lst(t_lst *lst)
+void	print_list(t_env *env, t_lst *lst)
 {
 	while (lst)
 	{
 		// if (!lst->flag)
 		// {
-			ft_putstr(L_ROUGE);
-			ft_putstr(lst->str);
-			ft_putendl(FIN);
+			env->ret = env->ret + write(1, lst->str, ft_strlen(lst->str));
 		// }
 		if (lst->next != NULL)
 			lst = lst->next;

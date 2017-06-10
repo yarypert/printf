@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/16 14:26:24 by yarypert          #+#    #+#             */
-/*   Updated: 2017/05/30 04:57:24 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/06/10 14:37:29 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int main(void)
 {
+	setlocale(LC_ALL, "");
 	printf("test s\n");
 	printf("printf =\n");
 	printf("%s", "le test est reussi");
@@ -37,7 +38,7 @@ int main(void)
 	printf("%c", 'a');
 	printf("\n");
 	printf("ft_printf =\n");
-	ft_printf("%c", "a");
+	ft_printf("%c", 'a');
 	printf("\n");
 	printf("\n");
 
@@ -52,10 +53,10 @@ int main(void)
 
 	printf("test multiflags\n");
 	printf("printf =\n");
-	printf("coucou%s%d%c", "test", 42, '0');
+	printf("coucou%s%d%c%c", "test", 42, '0', 'a');
 	printf("\n");
 	printf("ft_printf =\n");
-	ft_printf("coucou%s%d%c", "test", 42, '0');
+	ft_printf("coucou%s%d%c%c", "test", 42, '0', 'a');
 	printf("\n");
 	printf("\n");
 return (0);

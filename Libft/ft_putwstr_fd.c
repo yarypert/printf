@@ -6,11 +6,11 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/09 07:39:34 by yarypert          #+#    #+#             */
-/*   Updated: 2017/06/09 08:16:51 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/06/10 11:54:09 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
+#include "libft.h"
 
 void	ft_putwstr_fd(wchar_t *s,int fd)
 {
