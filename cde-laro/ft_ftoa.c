@@ -1,20 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ftoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cde-laro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/06/25 14:48:50 by cde-laro          #+#    #+#             */
+/*   Updated: 2017/06/25 14:51:01 by cde-laro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include "math.h"
 #include <stdio.h>
 
-
-char    *ft_strjoin_free(char **s1, char **s2)
+char    *ft_strjoin_free(char *s1, char *s2)
 {
 	char	*new;
 	size_t	len;
 
-	len = ft_strlen(*s1) + ft_strlen(*s2) + 1;
+	len = ft_strlen(s1) + ft_strlen(s2) + 1;
 	if (!s1 || !s2 || !(new = ft_strnew(len)))
 		return (0);
-	ft_strcat(new, *s1);
-	ft_strcat(new, *s2);
-    ft_strdel(s1);
-    ft_strdel(s2);
+	ft_strcat(new, s1);
+	ft_strcat(new, s2);
+    free(s1);
+    free(s2);
 	new[len] = '\0';
 	return (new);
 }
@@ -41,43 +52,41 @@ char	*ft_ftoa(double n, int i)
 {
 	char	*l_zero;
 	int		pos;
-	char	*ptr;
 	char	*ret;
 	double	dec;
+	int		ibis;
 
-	pos = (n < 0) ? 1 : 0;
-	ret = ft_itoa(n);
 	if (i == 0)
-		return (ret);
-	ptr = ft_strdup(".");
-	ret = ft_strjoin_free(&ret, &ptr);
+		return(ft_itoa(n));
+	ibis = i;
+	pos = (n < 0) ? 1 : 0;
 	n *= pos ? -1 : 1;
 	dec = n - (int)n;
-	while (dec)
-	{
-		i--;
-		if (i < 0)
-		{
-			if ((dec - (int)dec) * 10 > 5)
-				dec += (pos ? 1 : -1);
-			break;
-		}
+	while (dec && i-- > 0)
 		dec *= 10;
-
+	if (dec - (int) dec > 0.5)
+		dec++;
+	if (dec >= ft_power(10, ibis))
+	{
+		n++;
+		dec = 0;
+		i = ibis;
 	}
-	ptr = ft_itoa((int)dec);
-	ret = ft_strjoin_free(&ret, &ptr);
-	if (i == 0)
+	ret = ft_itoa((int)n * (pos ? -1 : 1));
+	ret = ft_strjoin_free(ft_strjoin_free(ret, ft_strdup(".")), ft_itoa((int)dec));
+	if (i > 0)
 	{
 		l_zero = ft_strset(i, '0');
-		ret = ft_strjoin_free(&ret, &l_zero);
+		ret = ft_strjoin_free(ret, l_zero);
 	}
 	return (ret);
 }
 
-int main(void)
+/* int main(void)
 {
-	ft_putendl(ft_ftoa(1.000000, 1));
-	printf("%1.1f\n", 1.0000000);
+	ft_putstr("ft_printf: \t");
+	ft_putendl(ft_ftoa(-1.99999999, 5));
+	printf("printf: \t%1.5f\n", -1.99999999);
     return (0);
 }
+*/

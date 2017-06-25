@@ -6,13 +6,13 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/10 14:05:51 by yarypert          #+#    #+#             */
-/*   Updated: 2017/06/10 14:18:20 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/06/25 12:25:31 by cde-laro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int			int_power(int nb, int power)
+static int			int_power(int nb, int power)
 {
 	if (power < 0)
 		return (0);
@@ -22,7 +22,7 @@ int			int_power(int nb, int power)
 		return (nb * int_power(nb, power - 1));
 }
 
-char		*sub_bin(char *str)
+static char		*sub_bin(char *str)
 {
 	int		i;
 	char	*ret;

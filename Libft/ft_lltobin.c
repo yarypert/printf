@@ -6,13 +6,13 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/09 01:14:57 by yarypert          #+#    #+#             */
-/*   Updated: 2017/06/10 14:18:09 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/06/25 12:25:51 by cde-laro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-long long	long_long_power(long long nb, long long power)
+static long long	long_long_power(long long nb, long long power)
 {
 	if (power < 0)
 		return (0);
@@ -22,7 +22,7 @@ long long	long_long_power(long long nb, long long power)
 		return (nb * long_long_power(nb, power - 1));
 }
 
-char		*sub_bin(char *str)
+static char		*sub_bin(char *str)
 {
 	int		i;
 	char	*ret;
