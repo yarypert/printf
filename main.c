@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/16 14:26:24 by yarypert          #+#    #+#             */
-/*   Updated: 2017/06/10 19:57:45 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/06/26 13:36:49 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,4 @@ int main(void)
 	ft_printf("coucou %s %d %c %c %x %o %b", "test", 42, '0', 'a', 2485, 18, 125);
 	printf("\n");
 	printf("\n");
-return (0);
-}
+return (0);}

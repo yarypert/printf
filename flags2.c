@@ -2,8 +2,7 @@
 
 void	flag_o(t_env *env, t_lst *lst)
 {
-	lst->str = ft_strreplace(lst->str, lst->str, ft_itoa_base(va_arg(env->args,
-		int), 8));
+	lst->str = ft_strreplace(lst->str, lst->str, ft_itoa_base(va_arg(env->args, int), 8));
 }
 
 void	flag_bigo(t_env *env, t_lst *lst)

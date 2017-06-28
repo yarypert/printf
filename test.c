@@ -9,7 +9,8 @@ int main(int argc, char **argv)
 	ft_putwchar_fd(0x1f4a9,1);
 	ft_putwchar_fd('\n',1);
 */
-	printf("%o\n", 55);
-	ft_putstr(ft_itoa_base(55, 8));
+
+	printf("%.5i", 255);
+	printf("%.5i", 255);
 	return 0;
 }
