@@ -44,8 +44,10 @@ int		main(int argc, char **argv)
 	return 0;
 }
 */
+/*
 int main(int argc, char **argv)
 {
 	ft_putstr(precision_string(argv[1], ft_atoi(argv[2])));
 	return 0;
 }
+*/

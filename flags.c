@@ -20,5 +20,5 @@ void	flag_d(t_env *env, t_lst *lst)
 
 void	flag_bigd(t_env *env, t_lst *lst)
 {
-	lst->str = ft_strreplace(lst->str, lst->str, ft_ltoa(va_arg(env->args,int)));
+	lst->str = ft_strreplace(lst->str, lst->str, ft_ltoa(va_arg(env->args,long)));
 }

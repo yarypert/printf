@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/10 12:13:26 by yarypert          #+#    #+#             */
-/*   Updated: 2017/07/27 17:27:32 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/07/27 18:08:59 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,28 @@ void	ft_dispatcher(t_env *env, t_lst *lst)
 
 void	ft_chooseflag(t_env *env, t_lst *lst)
 {
-	if(lst->str[ft_strlen(lst->str) - 1] == 'd' || lst->str[ft_strlen(lst->str) - 1] == 'i')
-		flag_d(env, lst);
-	if(lst->str[ft_strlen(lst->str) - 1] == 'c')
-		flag_c(env, lst);
 	if(lst->str[ft_strlen(lst->str) - 1] == 's')
 		flag_s(env, lst);
-	if(lst->str[ft_strlen(lst->str) - 1] == 'C')
-		flag_bigc(env, lst);
-	if(lst->str[ft_strlen(lst->str) - 1] == 'b')
-		flag_b(env, lst);
+	if(lst->str[ft_strlen(lst->str) - 1] == 'S')
+		ft_putendl("flag non gere %S");
+	if(lst->str[ft_strlen(lst->str) - 1] == 'p')
+		ft_putendl("flag non gere %p");
+	if(lst->str[ft_strlen(lst->str) - 1] == 'd' || lst->str[ft_strlen(lst->str) - 1] == 'i')
+		flag_d(env, lst);
+	if(lst->str[ft_strlen(lst->str) - 1] == 'D' || lst->str[ft_strlen(lst->str) - 1] == 'U' )
+		flag_bigd(env, lst);
 	if(lst->str[ft_strlen(lst->str) - 1] == 'o')
 		flag_o(env, lst);
+	if(lst->str[ft_strlen(lst->str) - 1] == 'O')
+		flag_bigo(env, lst);
 	if(lst->str[ft_strlen(lst->str) - 1] == 'x')
 		flag_x(env, lst);
+	if(lst->str[ft_strlen(lst->str) - 1] == 'X')
+		flag_bigx(env, lst);
+	if(lst->str[ft_strlen(lst->str) - 1] == 'c')
+		flag_c(env, lst);
+	if(lst->str[ft_strlen(lst->str) - 1] == 'C')
+		ft_putendl("flag non gere %C");
+	if(lst->str[ft_strlen(lst->str) - 1] == 'b')
+		flag_b(env, lst);
 }
