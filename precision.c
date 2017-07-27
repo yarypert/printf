@@ -1,12 +1,13 @@
-#include "ft_printf.h"
+#include "includes/ft_printf.h"
 
 char	*precision_string(char *str, int prec)
 {
 	int i;
 	char *str2;
 	i = 0;
-	
-	if(!(str2 = (char *)malloc(sizeof(char) * prec)))
+	if(prec < 0)
+		return(0);
+	if(!(str2 = (char *)malloc(sizeof(char) * prec + 1)))
 		return(NULL);
 	while (i < prec)
 	{
@@ -43,9 +44,8 @@ int		main(int argc, char **argv)
 	return 0;
 }
 */
-/*
 int main(int argc, char **argv)
 {
 	ft_putstr(precision_string(argv[1], ft_atoi(argv[2])));
 	return 0;
-}*/
+}

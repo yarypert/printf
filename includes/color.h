@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   color.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aancel <aancel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/09 03:05:35 by yarypert          #+#    #+#             */
-/*   Updated: 2017/06/09 03:05:45 by yarypert         ###   ########.fr       */
+/*   Created: 2016/12/03 04:35:36 by aancel            #+#    #+#             */
+/*   Updated: 2017/06/11 20:30:22 by aancel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,18 +57,25 @@
 # define C_GREY "\033[5;37m"
 # define FIN "\033[0m"
 # define BLACK_IN_WHITE "\033[1;48;5;255;38;5;16m"
-# define FALG_N "\033[0;"
-# define FALG_L "\033[1;"
-# define FALG_D "\033[2;"
-# define FALG_I "\033[3;"
-# define FALG_S "\033[4;"
-# define FALG_C "\033[5;"
-# define COL_ROUGE ""
-# define COL_VERT ""
-# define COL_JAUNE
-# define COL_BLEU
-# define COL_ROSE
-# define COL_TURQUOISE
-# define COL_GREY "37m"
+# define FLAG_N "\033[0"
+# define FLAG_L "\033[1"
+# define FLAG_D "\033[2"
+# define FLAG_I "\033[3"
+# define FLAG_S "\033[4"
+# define FLAG_C "\033[5"
+# define CCOL_ROUGE ";31m"
+# define CCOL_VERT ";32m"
+# define CCOL_JAUNE ";33m"
+# define CCOL_BLEU ";34m"
+# define CCOL_ROSE ";35m"
+# define CCOL_TURQUOISE ";36m"
+# define CCOL_GREY ";37m"
+# define FCOL_ROUGE ";41m"
+# define FCOL_VERT ";42m"
+# define FCOL_JAUNE ";43m"
+# define FCOL_BLEU ";44m"
+# define FCOL_ROSE ";45m"
+# define FCOL_TURQUOISE ";46m"
+# define FCOL_GREY ";47m"
 
 #endif

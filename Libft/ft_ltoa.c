@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 01:01:22 by yarypert          #+#    #+#             */
-/*   Updated: 2017/07/27 13:26:07 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/07/27 13:24:44 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	ft_len(long long int n)
 	return (len);
 }
 
-char		*ft_itoa(int n)
+char		*ft_ltoa(long int n)
 {
 	char				*str;
 	long long int		nsave;

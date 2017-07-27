@@ -6,11 +6,11 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/09 01:14:57 by yarypert          #+#    #+#             */
-/*   Updated: 2017/06/25 12:25:51 by cde-laro         ###   ########.fr       */
+/*   Updated: 2017/07/27 16:51:25 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "libft.h"
 
 static long long	long_long_power(long long nb, long long power)
 {

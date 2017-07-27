@@ -6,11 +6,11 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/10 14:05:51 by yarypert          #+#    #+#             */
-/*   Updated: 2017/06/25 12:25:31 by cde-laro         ###   ########.fr       */
+/*   Updated: 2017/07/27 16:51:09 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "Libft.h"
 
 static int			int_power(int nb, int power)
 {
