@@ -6,13 +6,13 @@
 /*   By: aancel <aancel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 02:49:45 by aancel            #+#    #+#             */
-/*   Updated: 2017/07/27 16:15:59 by aancel           ###   ########.fr       */
+/*   Updated: 2017/07/27 17:25:16 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "includes/ft_printf.h"
 
-void	ft_error(int error)
+void	ft_cerror(int error)
 {
 	if (error == 1)
 		ft_putendl(L_ROUGE "invalid flag" FIN);
@@ -154,7 +154,7 @@ void	check_lst(t_lst *lst)
 		if (lst->flag == 1)
 		{
 			if (valid_option_flag(lst) == -1)
-				ft_error(1);
+				ft_cerror(1);
 		}
 		if (lst->next != NULL)
 			lst = lst->next;
@@ -231,7 +231,7 @@ void	aff_valid_lst(t_lst *lst)
 			break ;
 	}
 }
-
+/*
 int		main(int argc, char **argv)
 {
 	t_lst *lst;
@@ -243,3 +243,4 @@ int		main(int argc, char **argv)
 	aff_valid_lst(lst);
 	return (0);
 }
+*/
