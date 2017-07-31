@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parseur.c                                          :+:      :+:    :+:   */
+/*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aancel <aancel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 02:49:45 by aancel            #+#    #+#             */
-/*   Updated: 2017/07/31 09:13:00 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/07/27 17:37:44 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/ft_printf.h"
 
-void	ft_err(int error)
+void	ft_cerror(int error)
 {
 	if (error == 1)
 		ft_putendl(L_ROUGE "invalid flag" FIN);
@@ -64,99 +64,87 @@ t_lst	*make_lst(char *str, t_lst *lst)
 
 void	init_flag(t_lst *lst)
 {
-	lst->indic = NULL;
-	lst->larg = NULL;
-	lst->larg_c = '!';
-	lst->larg_nbr = 0;
-	lst->preci = 0;
 	lst->mode_h = 0;
 	lst->mode_l = 0;
 	lst->mode_j = 0;
 	lst->mode_z = 0;
-}
+	lst->opt_more = 0;
+	lst->opt_less = 0;
+	lst->opt_nbr = -1;
+	lst->opt_hash = 0;
+	lst->opt_spc = 0;
 
-char	*set_indic_val(char *str, int *i)
-{
-	int tmp;
-
-	tmp = *i;
-	while (str[*i] == '-' || str[*i] == '+' || str[*i] == ' ' || str[*i] == '#')
-		*i = *i + 1; 
-	return (ft_strsub(str, tmp, *i - tmp));
-}
-
-char	*set_larg_val(char *str, int *i)
-{
-	int tmp;
-
-	tmp = *i;
-	while (ft_isdigit(str[*i]) || str[*i] == '*')
-		*i = *i + 1;
-	return (ft_strsub(str, tmp, *i - tmp));
-}
-
-int		set_preci_val(char *str, int *i)
-{
-	int save;
-
-	save = 0;
-	if (str[*i] == '.')
-	{
-		*i = *i + 1;
-		save = ft_atoi(&str[*i]);
-		while (ft_isdigit(str[*i]))
-			*i = *i = 1;
-	}
-	else
-		return(-1);
-	return (save);
 }
 
 void	set_op(char c, t_lst *lst)
 {
 	lst->mode_h += (c == 'h');
 	lst->mode_l += (c == 'l');
-	lst->mode_j += (c == 'j');
-	lst->mode_z += (c == 'z');
+	lst->mode_j = (c == 'j' ? 1 : lst->mode_j);
+	lst->mode_z = (c == 'z' ? 1 : lst->mode_z);
+	lst->opt_more = (c == '+' ? 1 : lst->opt_more);
+	lst->opt_less = (c == '-' ? 1 : lst->opt_less);
+	lst->opt_hash = (c == '#' ? 1 : lst->opt_hash);
+	lst->opt_spc = (c == ' ' ? 1 : lst->opt_spc);
 }
 
-void	set_mode_val(t_lst *lst, int *i)
+int		isop(char c)
 {
-	int len;
-
-	len = ft_strlen(lst->str);
-	while (len - *i - 1 > 0)
-	{
-		set_op(lst->str[*i], lst);
-		*i = *i + 1;
-	}
+	return (c == 'h' || c == 'l' || c == 'j' || c == 'z' || c == '+' ||
+		c == '-' || c == '#' || c == ' ');
 }
 
-void	dcp_larg_val(char *str, t_lst *lst)
+float	ft_ftof(char *str, int *i)
+{
+	int nbr1;
+	float nbr2;
+
+	nbr1 = ft_atoi(&str[*i]);
+	while (ft_isdigit(str[*i]))
+		*i = *i + 1;
+	*i = *i + 1;
+	nbr2 = (float)ft_atoi(&str[*i]);
+	while (ft_isdigit(str[*i]))
+		*i = *i + 1;
+	while(nbr2 > 1)
+		nbr2 /= 10;
+	return (nbr1 + nbr2);
+}
+
+int		check_flag(char *flag2, t_lst *lst)
 {
 	int i;
 
 	i = 0;
-	if (str[i] == '0' || str[i] == '*')
-		lst->larg_c = str[i++];
-	lst->larg_nbr = ft_atoi(&str[i]);
+	while (flag2[i])
+	{
+		if (ft_isdigit(flag2[i]) || flag2[i] == '.')
+		{
+			lst->opt_nbr = ft_ftof(flag2, &i);
+		}
+		else if (isop(flag2[i]))
+		{
+			set_op(flag2[i], lst);
+			i++;
+		}
+		else
+			return (-1);
+	}
+	return (0);
 }
 
 int		valid_option_flag(t_lst *lst)
 {
 	int len;
-	int i;
+	char *flag2;
 
-	i = 1;
 	len = ft_strlen(lst->str);
+	flag2 = ft_strsub(lst->str, 1, len - 2);
 	init_flag(lst);
-	lst->type = lst->str[len - 1];
-	lst->indic = set_indic_val(lst->str, &i);
-	lst->larg = set_larg_val(lst->str, &i);
-	dcp_larg_val(lst->larg, lst);
-	lst->preci = set_preci_val(lst->str, &i);
-	set_mode_val(lst, &i);
-	return (0);
+	if (len <= 2)
+		return (0);
+	else
+		return (check_flag(flag2, lst));
 }
 
 void	check_lst(t_lst *lst)
@@ -166,7 +154,7 @@ void	check_lst(t_lst *lst)
 		if (lst->flag == 1)
 		{
 			if (valid_option_flag(lst) == -1)
-				ft_err(1);
+				ft_cerror(1);
 		}
 		if (lst->next != NULL)
 			lst = lst->next;
@@ -220,13 +208,11 @@ void	aff_valid_lst(t_lst *lst)
 			printf("\tmode_l: %d\n", lst->mode_l);
 			printf("\tmode_j: %d\n", lst->mode_j);
 			printf("\tmode_z: %d\n", lst->mode_z);
-			printf("\tindic: `%s`\n", lst->indic);
-			printf("\tlarg: %s\n", lst->larg);
-			printf("\tlarg_c: %c\n", lst->larg_c);
-			printf("\tlarg_nbr: %d\n", lst->larg_nbr);
-			printf("\tpreci: %d\n", lst->preci);
-			printf("\ttype: %c\n", lst->type);
-
+			printf("\topt_more: %d\n", lst->opt_more);
+			printf("\topt_less: %d\n", lst->opt_less);
+			printf("\topt_nbr: %f\n", lst->opt_nbr);
+			printf("\topt_hash: %d\n", lst->opt_hash);
+			printf("\topt_spc: %d\n", lst->opt_spc);
 			printf("---------\n\n");
 		}
 		else if (lst->flag == 2)
@@ -245,7 +231,6 @@ void	aff_valid_lst(t_lst *lst)
 			break ;
 	}
 }
-
 /*
 int		main(int argc, char **argv)
 {
@@ -257,4 +242,5 @@ int		main(int argc, char **argv)
 	check_lst(lst);
 	aff_valid_lst(lst);
 	return (0);
-}*/
+}
+*/

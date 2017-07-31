@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/16 14:26:24 by yarypert          #+#    #+#             */
-/*   Updated: 2017/07/27 18:32:24 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/07/31 09:38:46 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ int main(void)
 	setlocale(LC_ALL, "");
 	printf("test multiflags\n");
 	printf("printf =\n");
-	printf("%.4s\n", "coucou");
+	printf("%3s\n", "prout");
+	printf("%.3s\n", "prout");
 	printf("ft_printf =\n");
-	ft_printf("%.4s\n", "coucou");
+	ft_printf("%3s\n", "prout");
+	ft_printf("%.3s\n", "prout");
 return (0);}

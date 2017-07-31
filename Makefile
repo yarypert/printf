@@ -1,10 +1,12 @@
 NAME = ft_printf
 
+NAME2 = libftprintf.a
+
 COMPIL = gcc
 
-SRCS = ft_printf.c main.c parse.c flags.c flags2.c flags3.c process.c printflags.c dispatcher.c
+SRCS = ft_printf.c main.c parse.c flags.c flags2.c flags3.c process.c printflags.c dispatcher.c precision.c
 
-OBJ = ft_printf.o main.o parse.o flags.o flags2.o flags3.o process.o printflags.o dispatcher.o
+OBJ = ft_printf.o main.o parse.o flags.o flags2.o flags3.o process.o printflags.o dispatcher.o precision.o
 
 INCLUDES = -I ./
 
@@ -34,6 +36,13 @@ fclean: clean
 	@rm -rf $(NAME)
 
 re: fclean all
+
+lib: fclean
+	@gcc -c $(FLAGS) $(INCLUDES) $(SRC)
+	@ar rc $(NAME2)
+	@ranlib $(NAME2)
+	@mkdir TMP
+	@mv $(OBJ) TMP
 
 git:
 	@git add .

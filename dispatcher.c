@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/10 12:13:26 by yarypert          #+#    #+#             */
-/*   Updated: 2017/07/27 18:08:59 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/07/31 06:24:15 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,28 +27,28 @@ void	ft_dispatcher(t_env *env, t_lst *lst)
 
 void	ft_chooseflag(t_env *env, t_lst *lst)
 {
-	if(lst->str[ft_strlen(lst->str) - 1] == 's')
+	if(lst->type == 's')
 		flag_s(env, lst);
-	if(lst->str[ft_strlen(lst->str) - 1] == 'S')
+	if(lst->type == 'S')
 		ft_putendl("flag non gere %S");
-	if(lst->str[ft_strlen(lst->str) - 1] == 'p')
+	if(lst->type == 'p')
 		ft_putendl("flag non gere %p");
-	if(lst->str[ft_strlen(lst->str) - 1] == 'd' || lst->str[ft_strlen(lst->str) - 1] == 'i')
+	if(lst->type == 'd' || lst->type == 'i')
 		flag_d(env, lst);
-	if(lst->str[ft_strlen(lst->str) - 1] == 'D' || lst->str[ft_strlen(lst->str) - 1] == 'U' )
+	if(lst->type == 'D' || lst->type == 'U')
 		flag_bigd(env, lst);
-	if(lst->str[ft_strlen(lst->str) - 1] == 'o')
+	if(lst->type == 'o')
 		flag_o(env, lst);
-	if(lst->str[ft_strlen(lst->str) - 1] == 'O')
+	if(lst->type == 'O')
 		flag_bigo(env, lst);
-	if(lst->str[ft_strlen(lst->str) - 1] == 'x')
+	if(lst->type == 'x')
 		flag_x(env, lst);
-	if(lst->str[ft_strlen(lst->str) - 1] == 'X')
+	if(lst->type == 'X')
 		flag_bigx(env, lst);
-	if(lst->str[ft_strlen(lst->str) - 1] == 'c')
+	if(lst->type == 'c')
 		flag_c(env, lst);
-	if(lst->str[ft_strlen(lst->str) - 1] == 'C')
+	if(lst->type == 'C')
 		ft_putendl("flag non gere %C");
-	if(lst->str[ft_strlen(lst->str) - 1] == 'b')
+	if(lst->type == 'b')
 		flag_b(env, lst);
 }

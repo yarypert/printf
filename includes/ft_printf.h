@@ -6,7 +6,7 @@
 /*   By: aancel <aancel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 02:49:45 by aancel            #+#    #+#             */
-/*   Updated: 2017/07/27 18:42:07 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/07/31 06:14:57 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,12 @@ typedef struct	s_lst
 	int				mode_l;
 	int				mode_j;
 	int				mode_z;
-	int				opt_more;
-	int				opt_less;
-	float			opt_nbr;
-	int				opt_hash;
-	int				opt_spc;
+	char			*indic;
+	char			*larg;
+	char			larg_c;
+	char			larg_nbr;
+	int				preci;
+	char			type;
 	struct s_lst	*next;
 	struct s_lst	*prev;
 }				t_lst;
@@ -67,7 +68,7 @@ void	flag_c(t_env *env, t_lst *lst);
 void	flag_bigc(t_env *env, t_lst *lst);
 void	flag_b(t_env *env, t_lst *lst);
 int		ft_printf(const char *format, ...);
-void	ft_cerror(int error);
+void	ft_err(int error);
 int		iscc(char c);
 int		set_val_flag(char c);
 t_lst	*make_lst(char *str, t_lst *lst);
@@ -82,5 +83,7 @@ t_lst	*ftp_parsing(char *str);
 void	aff_valid_lst(t_lst *lst);
 int		process(t_env *env, t_lst *lst);
 void	print_list(t_env *env, t_lst *lst);
+char	*precision_string(char *str, int prec);
+char	*precision_int(char *str, int prec);
 
 #endif
