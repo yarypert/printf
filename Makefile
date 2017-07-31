@@ -37,13 +37,6 @@ fclean: clean
 
 re: fclean all
 
-lib: fclean
-	@gcc -c $(FLAGS) $(INCLUDES) $(SRC)
-	@ar rc $(NAME2)
-	@ranlib $(NAME2)
-	@mkdir TMP
-	@mv $(OBJ) TMP
-
 git:
 	@git add .
 	@echo "Enter your Commit :"
