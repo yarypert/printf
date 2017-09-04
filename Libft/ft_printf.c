@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/16 14:26:24 by yarypert          #+#    #+#             */
-/*   Updated: 2017/09/04 19:32:58 by yarypert         ###   ########.fr       */
+/*   Created: 2017/05/11 03:53:47 by yarypert          #+#    #+#             */
+/*   Updated: 2017/08/27 21:07:30 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft/libft.h"
+#include "libft.h"
 
-int main(void)
+int		ft_printf(const char *format, ...)
 {
-	setlocale(LC_ALL, "");
-	printf("%3s\n", "prout");
-	printf("%.3s\n", "prout");
-return (0);}
+	t_env	env;
+	env.ret = 0;
+	env.format = (char *)format;
+	t_lst	*lst;
+	lst = NULL;
+	if (format)
+	{
+		va_start(env.args, format);
+		env.ret = process(&env, lst);
+		va_end(env.args);
+	}
+	return(env.ret);
+}

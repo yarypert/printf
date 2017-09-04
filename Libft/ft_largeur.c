@@ -43,8 +43,6 @@ char	*ft_largeur(int largeur, char *str)
 {
 	int     neg;
 	int     len;
-	char	*dest;
-	char	*src;
 
 	if (largeur < 0)
 	{

@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   process.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/16 14:26:24 by yarypert          #+#    #+#             */
-/*   Updated: 2017/09/04 19:32:58 by yarypert         ###   ########.fr       */
+/*   Created: 2017/06/09 03:30:54 by yarypert          #+#    #+#             */
+/*   Updated: 2017/09/04 19:32:04 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft/libft.h"
+#include "libft.h"
 
-int main(void)
+int		process(t_env *env, t_lst *lst)
 {
-	setlocale(LC_ALL, "");
-	printf("%3s\n", "prout");
-	printf("%.3s\n", "prout");
-return (0);}
+	lst = ftp_parsing(env->format);
+	check_lst(lst);
+//	aff_valid_lst(lst);
+	ft_dispatcher(env, lst);
+	print_list(env, lst);
+	return (env->ret);
+}
