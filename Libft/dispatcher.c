@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/10 12:13:26 by yarypert          #+#    #+#             */
-/*   Updated: 2017/09/06 17:25:37 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/09/06 19:02:07 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,30 +27,30 @@ void	ft_dispatcher(t_env *env, t_lst *lst)
 
 void	ft_chooseflag(t_env *env, t_lst *lst)
 {
-	if(lst->type == 's')
+	if (lst->type == 's')
 		flag_s(env, lst);
-	if(lst->type == 'S')
-		ft_putendl("flag non gere %S");
-	if(lst->type == 'p')
+	if (lst->type == 'p')
 		flag_p(env, lst);
-		if(lst->type == 'd' || lst->type == 'i')
+	if (lst->type == 'd' || lst->type == 'i')
 		flag_d(env, lst);
-	if(lst->type == 'D')
+	if (lst->type == 'D')
 		flag_bigd(env, lst);
-	if(lst->type == 'o')
+	if (lst->type == 'o')
 		flag_o(env, lst);
-	if(lst->type == 'O')
+	if (lst->type == 'O')
 		flag_bigo(env, lst);
-	if(lst->type == 'x')
+	if (lst->type == 'x')
 		flag_x(env, lst);
-	if(lst->type == 'X')
+	if (lst->type == 'X')
 		flag_bigx(env, lst);
-	if(lst->type == 'c')
+	if (lst->type == 'c')
 		flag_c(env, lst);
-	if(lst->type == 'C')
+	if (lst->type == 'C')
 		ft_putendl("flag non gere %C");
-	if(lst->type == 'b')
+	if (lst->type == 'b')
 		flag_b(env, lst);
-	if(lst->type == 'U')
+	if (lst->type == 'U')
 		flag_bigu(env, lst);
+	if (lst->type == '%')
+		flag_percent(lst);
 }

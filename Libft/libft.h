@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 00:49:27 by yarypert          #+#    #+#             */
-/*   Updated: 2017/09/06 15:40:12 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/09/06 19:39:23 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,6 +162,7 @@ typedef struct		s_env
 
 void				ft_dispatcher(t_env *env, t_lst *lst);
 void				ft_chooseflag(t_env *env, t_lst *lst);
+void				flag_percent(t_lst *lst);
 void				flag_s(t_env *env, t_lst *lst);
 void				flag_bigs(t_env *env, t_lst *lst);
 void				flag_p(t_env *env, t_lst *lst);

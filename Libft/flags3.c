@@ -27,3 +27,9 @@ void	flag_b(t_env *env, t_lst *lst)
 //		lst->str = ft_strreplace(lst->str, lst->str, ft_largeur
 //			(lst->preci, ft_itobin(va_arg(env->args,int))));
 }
+
+void	flag_percent(t_lst *lst)
+{
+	lst->str = ft_strreplace(lst->str, lst->str, "%");
+	lst->str = ft_largeur(ft_atoi(lst->larg), lst->str);
+}
