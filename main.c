@@ -15,6 +15,5 @@
 int main(void)
 {
 	setlocale(LC_ALL, "");
-
-	ft_printf("\n");
+	ft_printf("%llx\n", 9223372036854775807);
 	return (0);}

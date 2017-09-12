@@ -194,7 +194,7 @@ int					process(t_env *env, t_lst *lst);
 void				print_list(t_env *env, t_lst *lst);
 char				*precision_string(char *str, int prec);
 char				*precision_int(char *str, int prec);
-char				*ft_largeur(int largeur, char *str);
+char				*ft_largeur(int largeur, char *str, t_lst *lst);
 int					ft_nbrhexlen(int cp);
 char				*ft_putpp(void *p);
 wchar_t				ft_getwchar(wchar_t c);

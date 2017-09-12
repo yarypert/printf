@@ -39,10 +39,11 @@ char	*ft_largeur_str(int largeur)
 	return (ft_strset(largeur, ' '));
 }
 
-char	*ft_largeur(int largeur, char *str)
+char	*ft_largeur(int largeur, char *str, t_lst *lst)
 {
 	int     neg;
 	int     len;
+	char	c;
 
 	if (largeur < 0)
 	{
@@ -53,8 +54,12 @@ char	*ft_largeur(int largeur, char *str)
 		neg = 0;
 	if ((len = strlen(str)) > largeur)
 		return (str);
-	if (neg)
-		return(ft_strjoin(str, ft_strset(largeur - len + 1, ' ')));
+	if (lst->larg_c == '0')
+		c = '0';
 	else
-		return(ft_strjoin(ft_strset(largeur - len + 1, ' '), str));
+		c = ' ';
+	if (neg)
+		return(ft_strjoin(str, ft_strset(largeur - len + 1, c)));
+	else
+		return(ft_strjoin(ft_strset(largeur - len + 1, c), str));
 }

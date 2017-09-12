@@ -24,7 +24,9 @@ void	flag_s(t_env *env, t_lst *lst)
 		lst->str = ft_strreplace(lst->str, lst->str,
 				va_arg(env->args, char*));
 	}
-//	lst->str = ft_strreplace(lst->str, lst->str, ft_largeur(ft_atoi(lst->larg), va_arg(env->args, char*)));
+	if(ft_strcmp(lst->indic , "-") == 0)
+		lst->larg = ft_strjoin("-", lst->larg);
+	lst->str = ft_strreplace(lst->str, lst->str, ft_largeur(ft_atoi(lst->larg), lst->str, lst));
 }
 
 void	flag_bigs(t_env *env, t_lst *lst)
@@ -42,15 +44,31 @@ void	flag_d(t_env *env, t_lst *lst)
 {
 	if(lst->preci != -1)
 	{
-		lst->str = ft_strreplace(lst->str, lst->str, precision_int
+		if(lst->mode_l == 1)
+			lst->str = ft_strreplace(lst->str, lst->str, precision_int
+				(ft_ltoa(va_arg(env->args,long int)), lst->preci));
+		else if(lst->mode_l == 2)
+			lst->str = ft_strreplace(lst->str, lst->str, precision_int
+				(ft_ltoa(va_arg(env->args,long long int)), lst->preci));
+		else
+			lst->str = ft_strreplace(lst->str, lst->str, precision_int
 				(ft_itoa(va_arg(env->args,int)), lst->preci));
 	}
 	else
 	{
-		lst->str = ft_strreplace(lst->str, lst->str,
-				ft_itoa(va_arg(env->args,int)));
+		if(lst->mode_l == 1)
+			lst->str = ft_strreplace(lst->str, lst->str,
+				ft_itoa(va_arg(env->args,long int)));
+		else if(lst->mode_l == 2)
+			lst->str = ft_strreplace(lst->str, lst->str,
+				ft_ltoa(va_arg(env->args,long long int)));
+		else
+			lst->str = ft_strreplace(lst->str, lst->str,
+				ft_ltoa(va_arg(env->args,int)));
 	}
-//	lst->str = ft_strreplace(lst->str, lst->str, ft_largeur(ft_atoi(lst->larg), ft_itoa(va_arg(env->args,long))));
+	if(ft_strcmp(lst->indic , "-") == 0)
+		lst->larg = ft_strjoin("-", lst->larg);
+	lst->str = ft_strreplace(lst->str, lst->str, ft_largeur(ft_atoi(lst->larg), lst->str, lst));
 }
 
 void	flag_bigd(t_env *env, t_lst *lst)
@@ -58,12 +76,14 @@ void	flag_bigd(t_env *env, t_lst *lst)
 	if(lst->preci != -1)
 	{
 		lst->str = ft_strreplace(lst->str, lst->str, precision_int
-				(ft_ltoa(va_arg(env->args,long)),lst->preci));
+				(ft_ltoa(va_arg(env->args,long int)),lst->preci));
 	}
 	else
 	{
 		lst->str = ft_strreplace(lst->str, lst->str,
-				ft_ltoa(va_arg(env->args,long)));
+				ft_ltoa(va_arg(env->args,long int)));
 	}
-//	lst->str = ft_strreplace(lst->str, lst->str, ft_largeur(ft_atoi(lst->larg), ft_ltoa(va_arg(env->args,long))));
+	if(ft_strcmp(lst->indic , "-") == 0)
+		lst->larg = ft_strjoin("-", lst->larg);
+	lst->str = ft_strreplace(lst->str, lst->str, ft_largeur(ft_atoi(lst->larg), lst->str, lst));
 }
