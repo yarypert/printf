@@ -36,7 +36,8 @@ SRC = ft_atoi.c ft_bzero.c ft_factorial.c ft_find_next_prime.c ft_is_prime.c\
 	  ft_putwstr_fd.c ft_itobin.c ft_lltobin.c ft_ctoa.c ft_itoa_base.c\
 	  ft_ltoa.c ft_ltoa_base.c dispatcher.c flags.c flags2.c flags3.c\
 	  ft_printf.c parse.c precision.c printflags.c process.c ft_largeur.c\
-	  ft_strappend.c print_pointers.c ft_getwchar.c\
+	  ft_strappend.c print_pointers.c ft_getwchar.c ft_ultoa_base.c\
+	  ft_imtoa_base.c ft_uimtoa_base.c\
 
 OBJ = ${SRC:c=o}
 

@@ -18,6 +18,42 @@ void	flag_o(t_env *env, t_lst *lst)
 	{
 		if(lst->mode_l == 1)
 			lst->str = ft_strreplace(lst->str, lst->str, precision_int
+			(ft_ultoa_base(va_arg(env->args, unsigned long int), 8), lst->preci));
+		else if(lst->mode_l == 2)
+			lst->str = ft_strreplace(lst->str, lst->str, precision_int
+			(ft_ultoa_base(va_arg(env->args, unsigned long long int), 8), lst->preci));
+		else if(lst->mode_j == 1)
+			lst->str = ft_strreplace(lst->str, lst->str, precision_int
+			(ft_uimtoa_base(va_arg(env->args, uintmax_t), 8), lst->preci));
+		
+		else
+			lst->str = ft_strreplace(lst->str, lst->str, precision_int
+			(ft_ultoa_base(va_arg(env->args, unsigned int), 8), lst->preci));
+	}
+	else
+	{
+		if(lst->mode_l == 1)
+			lst->str = ft_strreplace(lst->str, lst->str,
+				ft_ultoa_base(va_arg(env->args, unsigned long int), 8));
+		else if(lst->mode_l == 2)
+			lst->str = ft_strreplace(lst->str, lst->str,
+				ft_ultoa_base(va_arg(env->args, unsigned long long int), 8));
+		else if(lst->mode_j == 1)
+			lst->str = ft_strreplace(lst->str, lst->str,
+				ft_uimtoa_base(va_arg(env->args, uintmax_t), 8));
+		else
+		lst->str = ft_strreplace(lst->str, lst->str,
+			ft_ultoa_base(va_arg(env->args, unsigned int), 8));
+	}
+	if(ft_strcmp(lst->indic , "-") == 0)
+		lst->larg = ft_strjoin("-", lst->larg);
+	lst->str = ft_strlowcase(ft_strreplace(lst->str, lst->str, ft_largeur(ft_atoi(lst->larg), lst->str, lst)));
+
+/*
+if (lst->preci != -1)
+	{
+		if(lst->mode_l == 1)
+			lst->str = ft_strreplace(lst->str, lst->str, precision_int
 			(ft_ltoa_base(va_arg(env->args, long int), 8), lst->preci));
 		else if(lst->mode_l == 2)
 			lst->str = ft_strreplace(lst->str, lst->str, precision_int
@@ -41,6 +77,7 @@ void	flag_o(t_env *env, t_lst *lst)
 	if(ft_strcmp(lst->indic , "-") == 0)
 		lst->larg = ft_strjoin("-", lst->larg);
 	lst->str = ft_strreplace(lst->str, lst->str, ft_largeur(ft_atoi(lst->larg), lst->str, lst));
+*/
 }
 
 void	flag_bigo(t_env *env, t_lst *lst)
@@ -77,49 +114,69 @@ void	flag_bigu(t_env *env, t_lst *lst)
 
 void	flag_x(t_env *env, t_lst *lst)
 {
-
 	if (lst->preci != -1)
 	{
 		if(lst->mode_l == 1)
 			lst->str = ft_strreplace(lst->str, lst->str, precision_int
-			(ft_ltoa_base(va_arg(env->args, long int), 16), lst->preci));
+			(ft_ultoa_base(va_arg(env->args, unsigned long int), 16), lst->preci));
 		else if(lst->mode_l == 2)
 			lst->str = ft_strreplace(lst->str, lst->str, precision_int
-			(ft_ltoa_base(va_arg(env->args, long long int), 16), lst->preci));
+			(ft_ultoa_base(va_arg(env->args, unsigned long long int), 16), lst->preci));
+		else if(lst->mode_j == 1)
+			lst->str = ft_strreplace(lst->str, lst->str, precision_int
+			(ft_uimtoa_base(va_arg(env->args, uintmax_t), 16), lst->preci));
+		
 		else
 			lst->str = ft_strreplace(lst->str, lst->str, precision_int
-			(ft_itoa_base(va_arg(env->args, int), 16), lst->preci));
+			(ft_ultoa_base(va_arg(env->args, unsigned int), 16), lst->preci));
 	}
 	else
 	{
 		if(lst->mode_l == 1)
-		lst->str = ft_strreplace(lst->str, lst->str,
-			ft_ltoa_base(va_arg(env->args, long int), 16));
+			lst->str = ft_strreplace(lst->str, lst->str,
+				ft_ultoa_base(va_arg(env->args, unsigned long int), 16));
 		else if(lst->mode_l == 2)
-		lst->str = ft_strreplace(lst->str, lst->str,
-			ft_ltoa_base(va_arg(env->args, long long int), 16));
+			lst->str = ft_strreplace(lst->str, lst->str,
+				ft_ultoa_base(va_arg(env->args, unsigned long long int), 16));
+		else if(lst->mode_j == 1)
+			lst->str = ft_strreplace(lst->str, lst->str,
+				ft_uimtoa_base(va_arg(env->args, uintmax_t), 16));
 		else
 		lst->str = ft_strreplace(lst->str, lst->str,
-			ft_itoa_base(va_arg(env->args, int), 16));
+			ft_ultoa_base(va_arg(env->args, unsigned int), 16));
 	}
 	if(ft_strcmp(lst->indic , "-") == 0)
 		lst->larg = ft_strjoin("-", lst->larg);
-	lst->str = ft_strreplace(lst->str, lst->str, ft_largeur(ft_atoi(lst->larg), lst->str, lst));
+	lst->str = ft_strlowcase(ft_strreplace(lst->str, lst->str, ft_largeur(ft_atoi(lst->larg), lst->str, lst)));
 }
 
 void	flag_bigx(t_env *env, t_lst *lst)
 {
 	if (lst->preci != -1)
 	{
-		lst->str = ft_strreplace(lst->str, lst->str, precision_int(ft_strupcase
-					(ft_itoa_base(va_arg(env->args, long int), 16)), lst->preci));
+		if(lst->mode_l == 1)
+			lst->str = ft_strreplace(lst->str, lst->str, precision_int
+			(ft_ultoa_base(va_arg(env->args, unsigned long int), 16), lst->preci));
+		else if(lst->mode_l == 2)
+			lst->str = ft_strreplace(lst->str, lst->str, precision_int
+			(ft_ultoa_base(va_arg(env->args, unsigned long long int), 16), lst->preci));
+		else
+			lst->str = ft_strreplace(lst->str, lst->str, precision_int
+			(ft_ultoa_base(va_arg(env->args, unsigned int), 16), lst->preci));
 	}
 	else
 	{
-		lst->str = ft_strreplace(lst->str, lst->str, ft_strupcase
-				(ft_itoa_base(va_arg(env->args, long int), 16)));
+		if(lst->mode_l == 1)
+		lst->str = ft_strreplace(lst->str, lst->str,
+			ft_ultoa_base(va_arg(env->args, unsigned long int), 16));
+		else if(lst->mode_l == 2)
+		lst->str = ft_strreplace(lst->str, lst->str,
+			ft_ultoa_base(va_arg(env->args, unsigned long long int), 16));
+		else
+		lst->str = ft_strreplace(lst->str, lst->str,
+			ft_ultoa_base(va_arg(env->args, unsigned int), 16));
 	}
-		if(ft_strcmp(lst->indic , "-") == 0)
+	if(ft_strcmp(lst->indic , "-") == 0)
 		lst->larg = ft_strjoin("-", lst->larg);
 	lst->str = ft_strreplace(lst->str, lst->str, ft_largeur(ft_atoi(lst->larg), lst->str, lst));
 }

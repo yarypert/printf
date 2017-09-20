@@ -67,7 +67,7 @@ void	flag_d(t_env *env, t_lst *lst)
 				ft_ltoa(va_arg(env->args,long long int)));
 		else if(lst->mode_j == 1)
 			lst->str = ft_strreplace(lst->str, lst->str,
-				ft_imtoa_base(va_arg(env->args,intmax_t), 10));
+				ft_imtoa_base(va_arg(env->args,intmax_t), 10), lst->preci);
 		else
 			lst->str = ft_strreplace(lst->str, lst->str,
 				ft_ltoa(va_arg(env->args,int)));

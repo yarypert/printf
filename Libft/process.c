@@ -16,7 +16,7 @@ int		process(t_env *env, t_lst *lst)
 {
 	lst = ftp_parsing(env->format);
 	check_lst(lst);
-	aff_valid_lst(lst);
+	//aff_valid_lst(lst);
 	ft_dispatcher(env, lst);
 	print_list(env, lst);
 	return (env->ret);
