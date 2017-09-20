@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/04 16:00:28 by yarypert          #+#    #+#             */
-/*   Updated: 2017/09/06 15:01:37 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/09/20 18:56:21 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,9 @@ void	flag_d(t_env *env, t_lst *lst)
 		if(lst->mode_l == 1)
 			lst->str = ft_strreplace(lst->str, lst->str, precision_int
 				(ft_ltoa(va_arg(env->args,long int)), lst->preci));
-		else if(lst->mode_l == 2)
+		else if(lst->mode_l == 2 || lst->mode_j == 1)
 			lst->str = ft_strreplace(lst->str, lst->str, precision_int
 				(ft_ltoa(va_arg(env->args,long long int)), lst->preci));
-		else if(lst->mode_j == 1)
-			lst->str = ft_strreplace(lst->str, lst->str, precision_int
-				(ft_imtoa_base(va_arg(env->args,intmax_t), 10), lst->preci));
 		else
 			lst->str = ft_strreplace(lst->str, lst->str, precision_int
 				(ft_itoa(va_arg(env->args,int)), lst->preci));
@@ -62,12 +59,9 @@ void	flag_d(t_env *env, t_lst *lst)
 		if(lst->mode_l == 1)
 			lst->str = ft_strreplace(lst->str, lst->str,
 				ft_itoa(va_arg(env->args,long int)));
-		else if(lst->mode_l == 2)
+		else if(lst->mode_l == 2 || lst->mode_j == 1)
 			lst->str = ft_strreplace(lst->str, lst->str,
 				ft_ltoa(va_arg(env->args,long long int)));
-		else if(lst->mode_j == 1)
-			lst->str = ft_strreplace(lst->str, lst->str,
-				ft_imtoa_base(va_arg(env->args,intmax_t), 10));
 		else
 			lst->str = ft_strreplace(lst->str, lst->str,
 				ft_ltoa(va_arg(env->args,int)));

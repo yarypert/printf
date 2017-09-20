@@ -19,7 +19,7 @@ void	flag_b(t_env *env, t_lst *lst)
 		if(lst->mode_l == 1)
 			lst->str = ft_strreplace(lst->str, lst->str, precision_int
 			(ft_ltoa_base(va_arg(env->args, long int), 2), lst->preci));
-		if(lst->mode_l == 2)
+		if(lst->mode_l == 2 || lst->mode_j == 1)
 			lst->str = ft_strreplace(lst->str, lst->str, precision_int
 			(ft_ltoa_base(va_arg(env->args, long long int), 2), lst->preci));
 		else
@@ -31,7 +31,7 @@ void	flag_b(t_env *env, t_lst *lst)
 		if(lst->mode_l == 1)
 		lst->str = ft_strreplace(lst->str, lst->str,
 			ft_ltoa_base(va_arg(env->args, long int), 2));
-		if(lst->mode_l == 2)
+		if(lst->mode_l == 2 || lst->mode_j == 1)
 		lst->str = ft_strreplace(lst->str, lst->str,
 			ft_ltoa_base(va_arg(env->args, long long int), 2));
 		else
