@@ -8,8 +8,8 @@ void	flag_c(t_env *env, t_lst *lst)
 
 void	flag_bigc(t_env *env, t_lst *lst)
 {
-	(void)env;
-	(void)lst;
+	lst->str = ft_strreplace(lst->str, lst->str,
+			ft_getwchar(va_arg(env->args, wchar_t)));
 }
 
 void	flag_b(t_env *env, t_lst *lst)
@@ -41,12 +41,4 @@ void	flag_b(t_env *env, t_lst *lst)
 	if(ft_strcmp(lst->indic , "-") == 0)
 		lst->larg = ft_strjoin("-", lst->larg);
 	lst->str = ft_strreplace(lst->str, lst->str, ft_largeur(ft_atoi(lst->larg), lst->str, lst));
-}
-
-void	flag_percent(t_lst *lst)
-{
-	if(ft_strcmp(lst->indic , "-") == 0)
-		lst->larg = ft_strjoin("-", lst->larg);
-	lst->str = ft_strreplace(lst->str, lst->str, "%");
-	lst->str = ft_largeur(ft_atoi(lst->larg), lst->str, lst);
 }

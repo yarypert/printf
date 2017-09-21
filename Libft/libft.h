@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 00:49:27 by yarypert          #+#    #+#             */
-/*   Updated: 2017/09/06 19:39:23 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/09/21 15:55:50 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,16 +165,20 @@ typedef struct		s_env
 
 void				ft_dispatcher(t_env *env, t_lst *lst);
 void				ft_chooseflag(t_env *env, t_lst *lst);
-void				flag_percent(t_lst *lst);
+void				ft_chooseflag2(t_env *env, t_lst *lst);
+void				flag_percent(t_env *env, t_lst *lst);
 void				flag_s(t_env *env, t_lst *lst);
 void				flag_bigs(t_env *env, t_lst *lst);
 void				flag_p(t_env *env, t_lst *lst);
 void				flag_d(t_env *env, t_lst *lst);
+void				flag_d2(t_env *env, t_lst *lst);
 void				flag_bigd(t_env *env, t_lst *lst);
 void				flag_o(t_env *env, t_lst *lst);
+void				flag_o2(t_env *env, t_lst *lst);
 void				flag_bigo(t_env *env, t_lst *lst);
 void				flag_bigu(t_env *env, t_lst *lst);
 void				flag_x(t_env *env, t_lst *lst);
+void				flag_x2(t_env *env, t_lst *lst);
 void				flag_bigx(t_env *env, t_lst *lst);
 void				flag_c(t_env *env, t_lst *lst);
 void				flag_bigc(t_env *env, t_lst *lst);
@@ -200,6 +204,6 @@ char				*precision_int(char *str, int prec);
 char				*ft_largeur(int largeur, char *str, t_lst *lst);
 int					ft_nbrhexlen(int cp);
 char				*ft_putpp(void *p);
-wchar_t				ft_getwchar(wchar_t c);
+char				*ft_getwchar(wchar_t c);
 
 #endif

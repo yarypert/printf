@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/10 12:13:26 by yarypert          #+#    #+#             */
-/*   Updated: 2017/09/06 19:02:07 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/09/21 15:58:10 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,21 @@ void	ft_chooseflag(t_env *env, t_lst *lst)
 		flag_x(env, lst);
 	if (lst->type == 'X')
 		flag_bigx(env, lst);
+	ft_chooseflag2(env, lst);
+}
+
+void	ft_chooseflag2(t_env *env, t_lst *lst)
+{
 	if (lst->type == 'c')
 		flag_c(env, lst);
 	if (lst->type == 'C')
-		ft_putendl("flag non gere %C");
+		flag_bigc(env, lst);
 	if (lst->type == 'b')
 		flag_b(env, lst);
 	if (lst->type == 'U')
 		flag_bigu(env, lst);
 	if (lst->type == '%')
-		flag_percent(lst);
+		flag_percent(env, lst);
+	if (lst->type == 'S')
+		ft_putstr("LOL MDR TU LA PAS FAIT PD\n");
 }

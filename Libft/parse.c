@@ -6,7 +6,7 @@
 /*   By: aancel <aancel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 02:49:45 by aancel            #+#    #+#             */
-/*   Updated: 2017/08/27 21:09:03 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/09/21 15:33:58 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	ft_err(int error)
 int		iscc(char c)
 {
 	return (c == 's' || c == 'S' || c == 'p' || c == 'd' || c == 'D' ||
-		c == 'i' || c == 'o' || c == 'O' || c == 'u' || c == 'U' || c == 'x' ||
-		c == 'X' || c == 'c' || c == 'C' || c == 'b' || c == '%');
+			c == 'i' || c == 'o' || c == 'O' || c == 'u' || c == 'U' || c == 'x' ||
+			c == 'X' || c == 'c' || c == 'C' || c == 'b' || c == '%');
 }
 
 int		set_val_flag(char c)
@@ -247,14 +247,14 @@ void	aff_valid_lst(t_lst *lst)
 }
 
 /*
-int		main(int argc, char **argv)
-{
-	t_lst *lst;
+   int		main(int argc, char **argv)
+   {
+   t_lst *lst;
 
-	argc += 0;
-	lst = NULL;
-	lst = ftp_parsing(argv[1]);
-	check_lst(lst);
-	aff_valid_lst(lst);
-	return (0);
-}*/
+   argc += 0;
+   lst = NULL;
+   lst = ftp_parsing(argv[1]);
+   check_lst(lst);
+   aff_valid_lst(lst);
+   return (0);
+   }*/
