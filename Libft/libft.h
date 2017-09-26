@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 00:49:27 by yarypert          #+#    #+#             */
-/*   Updated: 2017/09/21 15:55:50 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/09/26 19:42:27 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,6 +151,7 @@ typedef struct		s_lst
 	char			larg_nbr;
 	int				preci;
 	char			type;
+	char			*sharp;
 	struct s_lst	*next;
 	struct s_lst	*prev;
 }					t_lst;
@@ -205,5 +206,6 @@ char				*ft_largeur(int largeur, char *str, t_lst *lst);
 int					ft_nbrhexlen(int cp);
 char				*ft_putpp(void *p);
 char				*ft_getwchar(wchar_t c);
+void				littlesharp(t_lst *lst);
 
 #endif

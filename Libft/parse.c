@@ -6,7 +6,7 @@
 /*   By: aancel <aancel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 02:49:45 by aancel            #+#    #+#             */
-/*   Updated: 2017/09/21 15:33:58 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/09/26 16:05:28 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ int		set_preci_val(char *str, int *i)
 		*i = *i + 1;
 		save = ft_atoi(&str[*i]);
 		while (ft_isdigit(str[*i]))
-			*i = *i = 1;
+			*i = *i + 1;
 	}
 	else
 		return(-1);

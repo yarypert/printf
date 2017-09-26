@@ -6,11 +6,11 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 15:24:10 by yarypert          #+#    #+#             */
-/*   Updated: 2017/09/21 16:01:29 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/09/26 19:45:05 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
+#include "libft.h"
 
 void	flag_percent(t_env *env, t_lst *lst)
 {

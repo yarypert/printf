@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/16 14:26:24 by yarypert          #+#    #+#             */
-/*   Updated: 2017/09/06 19:38:52 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/09/26 16:02:21 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 int main(void)
 {
 	setlocale(LC_ALL, "");
-	ft_printf("%llx\n", 9223372036854775807);
+	ft_printf("%s", "coucou");
 	return (0);}

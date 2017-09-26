@@ -1,4 +1,4 @@
-#include "Libft.h"
+#include "libft.h"
 
 char *ft_getwchar(wchar_t c)
 {

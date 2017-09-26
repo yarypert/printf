@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/04 16:00:32 by yarypert          #+#    #+#             */
-/*   Updated: 2017/09/21 15:23:47 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/09/26 20:13:24 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,12 +117,13 @@ void	flag_x(t_env *env, t_lst *lst)
 
 void	flag_x2(t_env *env, t_lst *lst)
 {
+
 	if (lst->mode_l == 1)
 		lst->str = ft_strreplace(lst->str, lst->str,
 			ft_ultoa_base(va_arg(env->args, unsigned long int), 16));
 	else if (lst->mode_l == 2 || lst->mode_j == 1)
 		lst->str = ft_strreplace(lst->str, lst->str,
-			ft_ultoa_base(va_arg(env->args, unsigned long long int), 16));
+		ft_ultoa_base(va_arg(env->args, unsigned long long int), 16));
 	else
 		lst->str = ft_strreplace(lst->str, lst->str,
 			ft_ultoa_base(va_arg(env->args, unsigned int), 16));
