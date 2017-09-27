@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 00:49:27 by yarypert          #+#    #+#             */
-/*   Updated: 2017/09/26 19:42:27 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/09/27 12:46:00 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,6 +176,8 @@ void				flag_d2(t_env *env, t_lst *lst);
 void				flag_bigd(t_env *env, t_lst *lst);
 void				flag_o(t_env *env, t_lst *lst);
 void				flag_o2(t_env *env, t_lst *lst);
+void				flag_u(t_env *env, t_lst *lst);
+void				flag_u2(t_env *env, t_lst *lst);
 void				flag_bigo(t_env *env, t_lst *lst);
 void				flag_bigu(t_env *env, t_lst *lst);
 void				flag_x(t_env *env, t_lst *lst);

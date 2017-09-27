@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/10 12:13:26 by yarypert          #+#    #+#             */
-/*   Updated: 2017/09/21 15:58:10 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/09/27 12:41:02 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,6 @@ void	ft_chooseflag2(t_env *env, t_lst *lst)
 		flag_percent(env, lst);
 	if (lst->type == 'S')
 		ft_putstr("LOL MDR TU LA PAS FAIT PD\n");
+	if (lst->type == 'u')
+		flag_u(env, lst);
 }

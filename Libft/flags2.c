@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/04 16:00:32 by yarypert          #+#    #+#             */
-/*   Updated: 2017/09/26 20:13:24 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/09/27 13:33:47 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,8 @@ void	flag_x(t_env *env, t_lst *lst)
 	{
 		flag_x2(env, lst);
 	}
+	if (ft_strcmp(lst->indic, "#") == 0)
+		lst->str = ft_strjoin("0x", lst->str);
 	if (ft_strcmp(lst->indic, "-") == 0)
 		lst->larg = ft_strjoin("-", lst->larg);
 	lst->str = ft_strlowcase(ft_strreplace(lst->str,
