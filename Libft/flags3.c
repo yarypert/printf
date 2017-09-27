@@ -4,6 +4,10 @@ void	flag_c(t_env *env, t_lst *lst)
 {
 	lst->str = ft_strreplace(lst->str, lst->str,
 			ft_ctoa(va_arg(env->args, int)));
+	if(ft_strcmp(lst->indic , "-") == 0)
+		lst->larg = ft_strjoin("-", lst->larg);
+	lst->str = ft_strreplace(lst->str, lst->str, ft_largeur(ft_atoi(lst->larg), lst->str, lst));
+
 }
 
 void	flag_bigc(t_env *env, t_lst *lst)

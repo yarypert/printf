@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/04 16:00:32 by yarypert          #+#    #+#             */
-/*   Updated: 2017/09/27 13:33:47 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/09/27 17:46:53 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,8 @@ void	flag_bigu(t_env *env, t_lst *lst)
 
 void	flag_x(t_env *env, t_lst *lst)
 {
+	int i;
+	i = 0;
 	if (lst->preci != -1)
 	{
 		if (lst->mode_l == 1)
@@ -110,11 +112,13 @@ void	flag_x(t_env *env, t_lst *lst)
 		flag_x2(env, lst);
 	}
 	if (ft_strcmp(lst->indic, "#") == 0)
-		lst->str = ft_strjoin("0x", lst->str);
+			i = 2;
 	if (ft_strcmp(lst->indic, "-") == 0)
 		lst->larg = ft_strjoin("-", lst->larg);
 	lst->str = ft_strlowcase(ft_strreplace(lst->str,
-				lst->str, ft_largeur(ft_atoi(lst->larg), lst->str, lst)));
+				lst->str, ft_largeur(ft_atoi(lst->larg) - i, lst->str, lst)));
+	if (i == 2)
+		lst->str = ft_strjoin("0x", lst->str);
 }
 
 void	flag_x2(t_env *env, t_lst *lst)

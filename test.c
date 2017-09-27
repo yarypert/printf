@@ -12,7 +12,7 @@
 int main(void)
 {
 	setlocale(LC_ALL, "");
-	printf("%#08x\n", 255);
-	ft_printf("%#08x\n", 255);
+	printf("vrai printf %s\n", 0);
+	ft_printf("mon printf! %s\n", 0);
 	return (0);
 }
