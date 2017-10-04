@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 00:49:27 by yarypert          #+#    #+#             */
-/*   Updated: 2017/09/27 12:46:00 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/10/04 10:43:58 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,6 +154,7 @@ typedef struct		s_lst
 	char			*sharp;
 	struct s_lst	*next;
 	struct s_lst	*prev;
+	unsigned long long int xvalue;
 }					t_lst;
 
 typedef struct		s_env
@@ -169,23 +170,37 @@ void				ft_chooseflag(t_env *env, t_lst *lst);
 void				ft_chooseflag2(t_env *env, t_lst *lst);
 void				flag_percent(t_env *env, t_lst *lst);
 void				flag_s(t_env *env, t_lst *lst);
+void				flag_s_preci(t_env *env, t_lst *lst);
+void				flag_s_nopreci(t_env *env, t_lst *lst);
 void				flag_bigs(t_env *env, t_lst *lst);
 void				flag_p(t_env *env, t_lst *lst);
 void				flag_d(t_env *env, t_lst *lst);
-void				flag_d2(t_env *env, t_lst *lst);
+void				flag_d_preci(t_env *env, t_lst *lst);
+void				flag_d_nopreci(t_env *env, t_lst *lst);
 void				flag_bigd(t_env *env, t_lst *lst);
 void				flag_o(t_env *env, t_lst *lst);
-void				flag_o2(t_env *env, t_lst *lst);
+void				flag_o_preci(t_env *env, t_lst *lst);
+void				flag_o_nopreci(t_env *env, t_lst *lst);
 void				flag_u(t_env *env, t_lst *lst);
-void				flag_u2(t_env *env, t_lst *lst);
+void				flag_u_preci(t_env *env, t_lst *lst);
+void				flag_u_nopreci(t_env *env, t_lst *lst);
 void				flag_bigo(t_env *env, t_lst *lst);
+void				flag_bigo_preci(t_env *env, t_lst *lst);
+void				flag_bigo_nopreci(t_env *env, t_lst *lst);
 void				flag_bigu(t_env *env, t_lst *lst);
+void				flag_bigu_preci(t_env *env, t_lst *lst);
+void				flag_bigu_nopreci(t_env *env, t_lst *lst);
 void				flag_x(t_env *env, t_lst *lst);
-void				flag_x2(t_env *env, t_lst *lst);
+void				flag_x_preci(t_lst *lst);
+void				flag_x_precisharp(t_lst *lst);
+void				flag_x_noprecisharp(t_lst *lst);
+void				flag_x_nopreci(t_lst *lst);
 void				flag_bigx(t_env *env, t_lst *lst);
 void				flag_c(t_env *env, t_lst *lst);
 void				flag_bigc(t_env *env, t_lst *lst);
 void				flag_b(t_env *env, t_lst *lst);
+void				flag_b_preci(t_env *env, t_lst *lst);
+void				flag_b_nopreci(t_env *env, t_lst *lst);
 int					ft_printf(const char *format, ...);
 void				ft_err(int error);
 int					iscc(char c);
@@ -208,6 +223,7 @@ char				*ft_largeur(int largeur, char *str, t_lst *lst);
 int					ft_nbrhexlen(int cp);
 char				*ft_putpp(void *p);
 char				*ft_getwchar(wchar_t c);
-void				littlesharp(t_lst *lst);
+
+
 
 #endif

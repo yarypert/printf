@@ -6,7 +6,7 @@
 #    By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/06 00:55:05 by yarypert          #+#    #+#              #
-#    Updated: 2017/09/21 15:29:01 by yarypert         ###   ########.fr        #
+#    Updated: 2017/10/04 00:22:25 by yarypert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,10 +34,12 @@ SRC = ft_atoi.c ft_bzero.c ft_factorial.c ft_find_next_prime.c ft_is_prime.c\
 	  ft_tolower.c ft_toupper.c ft_void.c get_next_line.c ft_abs.c ft_error.c\
 	  ft_strreplace.c ft_putwchar.c ft_putwchar_fd.c ft_putwstr.c\
 	  ft_putwstr_fd.c ft_itobin.c ft_lltobin.c ft_ctoa.c ft_itoa_base.c\
-	  ft_ltoa.c ft_ltoa_base.c dispatcher.c flags.c flags2.c flags3.c flags4.c\
-	  ft_printf.c parse.c precision.c printflags.c process.c ft_largeur.c\
-	  ft_strappend.c print_pointers.c ft_getwchar.c ft_ultoa_base.c\
-	  ft_imtoa_base.c ft_uimtoa_base.c\
+	  ft_ltoa.c ft_ltoa_base.c dispatcher.c ft_printf.c parse.c precision.c\
+	  printflags.c process.c ft_largeur.c ft_strappend.c print_pointers.c\
+	  ft_getwchar.c ft_ultoa_base.c ft_imtoa_base.c ft_uimtoa_base.c\
+	  flag_b.c flag_bigc.c flag_bigd.c flag_bigo.c flag_bigs.c flag_bigu.c\
+	  flag_bigx.c flag_c.c flag_d.c flag_o.c flag_p.c flag_percent.c flag_s.c\
+	  flag_u.c flag_x.c\
 
 OBJ = ${SRC:c=o}
 

@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/03 23:08:43 by yarypert          #+#    #+#             */
-/*   Updated: 2017/10/03 23:09:14 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/10/04 01:39:38 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	flag_bigd(t_env *env, t_lst *lst)
 {
-	if (lst->preci != -1	)
+	if (lst->preci != -1)
 	{
 		lst->str = ft_strreplace(lst->str, lst->str,
 				precision_int(ft_ltoa(va_arg(env->args, long int)), lst->preci));

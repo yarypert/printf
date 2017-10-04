@@ -1,4 +1,4 @@
-#include "../Libft/libft.h"
+#include "libft.h"
 
 char	*ft_strjoin_free(char *s1, char *s2)
 {
@@ -52,7 +52,7 @@ char	*ft_largeur(int largeur, char *str, t_lst *lst)
 	}
 	else
 		neg = 0;
-	if ((len = strlen(str)) > largeur)
+	if ((len = ft_strlen(str)) > largeur)
 		return (str);
 	if (lst->larg_c == '0')
 		c = '0';
