@@ -12,17 +12,11 @@
 int main(void)
 {
 	setlocale(LC_ALL, "");
-	printf("UNIX_1_@moulitest: %#x\n", 0);
-	printf("UNIX_2_@moulitest: %#.x\n", 0);
-	printf("UNIX_3_@moulitest: %#.0x\n", 0);
-	printf("UNIX_4_@moulitest: %x\n", 0);
-	printf("UNIX_5_@moulitest: %.x\n", 0);
-	printf("UNIX_6_@moulitest: %.0x\n", 0);
-	ft_printf("FTPF_1_@moulitest: %#x\n", 0);
-	ft_printf("FTPF_2_@moulitest: %#.x\n", 0);
-	ft_printf("FTPF_3_@moulitest: %#.0x\n", 0);
-	ft_printf("FTPF_4_@moulitest: %x\n", 0);
-	ft_printf("FTPF_5_@moulitest: %.x\n", 0);
-	ft_printf("FTPF_6_@moulitest: %.0x\n", 0);
+	printf("UNIX_1_@moulitest: %#.x %#.0x\n", 0, 0);
+	printf("UNIX_2_@moulitest: %.x %.0x\n", 0, 0);
+	printf("UNIX_3_@moulitest: %5.x %5.0x\n", 0, 0);
+	ft_printf("FTPF_1_@moulitest: %#.x %#.0x\n", 0, 0);
+	ft_printf("FTPF_2_@moulitest: %.x %.0x\n", 0, 0);
+	ft_printf("FTPF_3_@moulitest: %5.x %5.0x\n", 0, 0);
 return (0);
 }
