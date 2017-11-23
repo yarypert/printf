@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 00:49:27 by yarypert          #+#    #+#             */
-/*   Updated: 2017/10/04 10:43:58 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/11/23 16:07:54 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ char				*ft_itobin(int nb);
 char				*ft_lltobin(long long nb);
 char				*ft_itoa(int n);
 char				*ft_ltoa(long int n);
+char				*ft_lltoa(long long int n);
 char				*ft_strdup(char const *s1);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst, const char *src, size_t n);
@@ -139,6 +140,7 @@ void				ft_lstadd(t_list **alst, t_list *new);
 
 typedef struct		s_lst
 {
+	char			*argu;
 	char			*str;
 	int				flag;
 	int				mode_h;
@@ -161,7 +163,7 @@ typedef struct		s_env
 {
 	va_list			args;
 	int				ret;
-	char*			format;
+	char			*format;
 }					 t_env;
 
 

@@ -6,13 +6,13 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 01:01:22 by yarypert          #+#    #+#             */
-/*   Updated: 2017/11/23 13:21:49 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/11/23 13:19:37 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	itoa_islongnegative(long int *n, int *negative)
+static void	itoa_isllnegative(long long int *n, int *negative)
 {
 	if (*n < 0)
 	{
@@ -21,18 +21,18 @@ static void	itoa_islongnegative(long int *n, int *negative)
 	}
 }
 
-char	*ft_ltoa(long int n)
+char	*ft_lltoa(long long int n)
 {
-	unsigned long int		tmpn;
+	unsigned long long int		tmpn;
 	int		negative;
 	char	*str;
 	long int len;
 
-	if(n == -2147483647 - 1)
-		return(ft_strdup("-2147483648"));
+	if(n == -9223372036854775807 - 1)
+		return(ft_strdup("-9223372036854775808"));
 	len = 2;
 	negative = 0;
-	itoa_islongnegative(&n, &negative);
+	itoa_isllnegative(&n, &negative);
 	tmpn = n;
 	while (tmpn /= 10)
 		len++;

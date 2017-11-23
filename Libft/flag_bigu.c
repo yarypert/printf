@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/03 23:14:29 by yarypert          #+#    #+#             */
-/*   Updated: 2017/10/04 03:28:25 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/11/23 12:14:20 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ void	flag_bigu(t_env *env, t_lst *lst)
 void	flag_bigu_preci(t_env *env, t_lst *lst)
 {
 	lst->str = ft_strreplace(lst->str, lst->str,
-			precision_int(ft_ltoa(va_arg(env->args, unsigned int)), lst->preci));
+			precision_int(ft_ltoa(va_arg(env->args, unsigned long long int)), lst->preci));
 }
 
 void	flag_bigu_nopreci(t_env *env, t_lst *lst)
 {
 	lst->str = ft_strreplace(lst->str, lst->str,
-			ft_ltoa(va_arg(env->args, unsigned int)));
+			ft_ltoa(va_arg(env->args, unsigned long long int)));
 }

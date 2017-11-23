@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/03 23:07:43 by yarypert          #+#    #+#             */
-/*   Updated: 2017/10/04 03:34:08 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/11/23 16:08:56 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,15 @@ void	flag_d(t_env *env, t_lst *lst)
 
 void	flag_d_preci(t_env *env, t_lst *lst)
 {
-	if (lst->	mode_l == 1)
+	if (lst->mode_l == 1)
 		lst->str = ft_strreplace(lst->str, lst->str,
 				precision_int(ft_ltoa(va_arg(env->args, long int)), lst->preci));
 	else if (lst->mode_l == 2 || lst->mode_j == 1)
 		lst->str = ft_strreplace(lst->str, lst->str,
-				precision_int(ft_ltoa(va_arg(env->args, long long int)), lst->preci));
+				precision_int(ft_lltoa(va_arg(env->args, long long int)), lst->preci));
+	else if (lst->mode_z == 1)
+		lst->str = ft_strreplace(lst->str, lst->str,
+				precision_int(ft_ultoa_base(va_arg(env->args, unsigned long int), 10), lst->preci));
 	else
 		lst->str = ft_strreplace(lst->str, lst->str,
 				precision_int(ft_itoa(va_arg(env->args, int)), lst->preci));
@@ -41,11 +44,14 @@ void	flag_d_nopreci(t_env *env, t_lst *lst)
 {
 	if (lst->mode_l == 1)
 		lst->str = ft_strreplace(lst->str, lst->str,
-				ft_itoa(va_arg(env->args, long int)));
+				ft_ltoa(va_arg(env->args, long int)));
 	else if (lst->mode_l == 2 || lst->mode_j == 1)
 		lst->str = ft_strreplace(lst->str, lst->str,
-				ft_ltoa(va_arg(env->args, long long int)));
+				ft_lltoa(va_arg(env->args, long long int)));
+	else if (lst->mode_z == 1)
+		lst->str = ft_strreplace(lst->str, lst->str,
+				ft_ultoa_base(va_arg(env->args, unsigned long int), 10));
 	else
 		lst->str = ft_strreplace(lst->str, lst->str,
-				ft_ltoa(va_arg(env->args, int)));
+				ft_itoa(va_arg(env->args, int)));
 }

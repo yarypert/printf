@@ -6,7 +6,7 @@
 #    By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/06 00:55:05 by yarypert          #+#    #+#              #
-#    Updated: 2017/10/04 00:22:25 by yarypert         ###   ########.fr        #
+#    Updated: 2017/11/23 13:20:39 by yarypert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ SRC = ft_atoi.c ft_bzero.c ft_factorial.c ft_find_next_prime.c ft_is_prime.c\
 	  ft_getwchar.c ft_ultoa_base.c ft_imtoa_base.c ft_uimtoa_base.c\
 	  flag_b.c flag_bigc.c flag_bigd.c flag_bigo.c flag_bigs.c flag_bigu.c\
 	  flag_bigx.c flag_c.c flag_d.c flag_o.c flag_p.c flag_percent.c flag_s.c\
-	  flag_u.c flag_x.c\
+	  flag_u.c flag_x.c ft_lltoa.c\
 
 OBJ = ${SRC:c=o}
 
