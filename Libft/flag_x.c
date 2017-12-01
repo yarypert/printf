@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/03 23:15:30 by yarypert          #+#    #+#             */
-/*   Updated: 2017/11/23 05:22:30 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/12/01 03:34:38 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	flag_x(t_env *env, t_lst *lst)
 {
+		lst->xvalue = va_arg(env->args, unsigned long long int);
 	if(lst->preci == 0 && lst->xvalue == 0)
 		lst->str = ft_strreplace(lst->str,
 				lst->str, ft_largeur(ft_atoi(lst->larg), "", lst));
 	else
 	{
-		lst->xvalue = va_arg(env->args, unsigned long long int);
 		if (ft_atoi(lst->larg) >= 2 && ft_strchr(lst->indic, '#') != 0 &&
 				ft_strchr(lst->indic, '-') == 0 && lst->larg_c == '0')
 			lst->larg = ft_itoa(ft_atoi(lst->larg) - 2);

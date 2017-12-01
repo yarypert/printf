@@ -6,7 +6,7 @@
 /*   By: aancel <aancel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 02:49:45 by aancel            #+#    #+#             */
-/*   Updated: 2017/11/23 03:29:01 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/12/01 02:12:07 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int		set_val_flag(char c)
 {
 	if (c == '%')
 		return (1);
-	else if (c == '{')
-		return (2);
+	//else if (c == '{')
+	//	return (2);
 	else
 		return (0);
 }
@@ -190,15 +190,15 @@ t_lst	*ftp_parsing(char *str)
 			len = 1;
 			while (str[i + len] && !iscc(str[i + len++])) ;
 		}
-		else if (str[i] == '{')
-		{
-			len = 1;
-			while (str[i + len] && str[i + len++] != '}') ;
-		}
+//		else if (str[i] == '{')
+//		{
+//			len = 1;
+//			while (str[i + len] && str[i + len++] != '}') ;
+//		}
 		else
 		{
 			len = 0;
-			while (str[i + len] && str[i + len] != '%' && str[i + len] != '{')
+			while (str[i + len] && str[i + len] != '%' /*&& str[i + len] != '{'*/)
 				len++;
 		}
 		lst = make_lst(ft_strsub(str, i, len), lst);

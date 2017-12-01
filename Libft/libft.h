@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 00:49:27 by yarypert          #+#    #+#             */
-/*   Updated: 2017/11/23 16:07:54 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/12/01 05:19:37 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,6 +157,7 @@ typedef struct		s_lst
 	struct s_lst	*next;
 	struct s_lst	*prev;
 	unsigned long long int xvalue;
+	char			*svalue;
 }					t_lst;
 
 typedef struct		s_env
@@ -172,8 +173,8 @@ void				ft_chooseflag(t_env *env, t_lst *lst);
 void				ft_chooseflag2(t_env *env, t_lst *lst);
 void				flag_percent(t_env *env, t_lst *lst);
 void				flag_s(t_env *env, t_lst *lst);
-void				flag_s_preci(t_env *env, t_lst *lst);
-void				flag_s_nopreci(t_env *env, t_lst *lst);
+void				flag_s_preci(t_lst *lst);
+void				flag_s_nopreci(t_lst *lst);
 void				flag_bigs(t_env *env, t_lst *lst);
 void				flag_p(t_env *env, t_lst *lst);
 void				flag_d(t_env *env, t_lst *lst);
@@ -181,14 +182,14 @@ void				flag_d_preci(t_env *env, t_lst *lst);
 void				flag_d_nopreci(t_env *env, t_lst *lst);
 void				flag_bigd(t_env *env, t_lst *lst);
 void				flag_o(t_env *env, t_lst *lst);
-void				flag_o_preci(t_env *env, t_lst *lst);
-void				flag_o_nopreci(t_env *env, t_lst *lst);
+void				flag_o_preci(t_lst *lst);
+void				flag_o_nopreci(t_lst *lst);
 void				flag_u(t_env *env, t_lst *lst);
 void				flag_u_preci(t_env *env, t_lst *lst);
 void				flag_u_nopreci(t_env *env, t_lst *lst);
 void				flag_bigo(t_env *env, t_lst *lst);
-void				flag_bigo_preci(t_env *env, t_lst *lst);
-void				flag_bigo_nopreci(t_env *env, t_lst *lst);
+void				flag_bigo_preci(t_lst *lst);
+void				flag_bigo_nopreci(t_lst *lst);
 void				flag_bigu(t_env *env, t_lst *lst);
 void				flag_bigu_preci(t_env *env, t_lst *lst);
 void				flag_bigu_nopreci(t_env *env, t_lst *lst);
