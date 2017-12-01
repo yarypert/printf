@@ -10,7 +10,7 @@
 int main(void)
 {
 //	setlocale(LC_ALL, "");
-	printf("%O\n", LONG_MAX);
-	ft_printf("%O\n", LONG_MAX);
+	printf("U|% d\n", 42);
+	ft_printf("f|% d\n", 42);
 	return (0);
 }

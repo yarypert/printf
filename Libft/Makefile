@@ -6,7 +6,7 @@
 #    By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/06 00:55:05 by yarypert          #+#    #+#              #
-#    Updated: 2017/12/01 03:37:54 by yarypert         ###   ########.fr        #
+#    Updated: 2017/12/01 07:36:02 by yarypert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ SRC = ft_atoi.c ft_bzero.c ft_factorial.c ft_find_next_prime.c ft_is_prime.c\
 	  ft_strreplace.c ft_putwchar.c ft_putwchar_fd.c ft_putwstr.c\
 	  ft_putwstr_fd.c ft_itobin.c ft_lltobin.c ft_ctoa.c ft_itoa_base.c\
 	  ft_ltoa.c ft_ltoa_base.c dispatcher.c ft_printf.c parse.c precision.c\
-	  printflags.c process.c ft_largeur.c ft_strappend.c\
+	  printflags.c process.c ft_largeur.c ft_strappend.c ft_ultoa.c\
 	  ft_getwchar.c ft_ultoa_base.c ft_imtoa_base.c ft_uimtoa_base.c\
 	  flag_b.c flag_bigc.c flag_bigd.c flag_bigo.c flag_bigs.c flag_bigu.c\
 	  flag_bigx.c flag_c.c flag_d.c flag_o.c flag_p.c flag_percent.c flag_s.c\

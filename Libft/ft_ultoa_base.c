@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/10 19:46:38 by yarypert          #+#    #+#             */
-/*   Updated: 2017/07/27 13:27:24 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/12/01 07:25:37 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		ft_counter(unsigned long long int n, int base)
 	return (i);
 }
 
-void	ft_str_refill(char *str, unsigned long int n, int base)
+void	ft_str_refill(char *str, unsigned long long int n, int base)
 {
 	int			digit;
 

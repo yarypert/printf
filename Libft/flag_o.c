@@ -47,7 +47,7 @@ void	flag_o_preci(t_lst *lst)
 				(ft_ultoa_base((unsigned long int)lst->xvalue, 8),
 				 lst->preci));
 	}
-	else if (lst->mode_l == 2 || lst->mode_j == 1)
+	else if (lst->mode_l == 2 || lst->mode_j == 1 || lst->mode_z == 1)
 	{
 		lst->str = ft_strreplace(lst->str, lst->str, precision_int
 				(ft_ultoa_base((unsigned long long int)lst->xvalue, 8),
@@ -68,7 +68,7 @@ void	flag_o_nopreci(t_lst *lst)
 		lst->str = ft_strreplace(lst->str, lst->str,
 				ft_ultoa_base((unsigned long int)lst->xvalue, 8));
 	}
-	else if (lst->mode_l == 2 || lst->mode_j == 1)
+	else if (lst->mode_l == 2 || lst->mode_j == 1 || lst->mode_z == 1)
 	{
 		lst->str = ft_strreplace(lst->str, lst->str,
 				ft_ultoa_base((unsigned long long int)lst->xvalue, 8));

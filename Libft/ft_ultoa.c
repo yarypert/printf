@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   process.c                                          :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/09 03:30:54 by yarypert          #+#    #+#             */
-/*   Updated: 2017/12/01 12:05:56 by yarypert         ###   ########.fr       */
+/*   Created: 2016/11/07 01:01:22 by yarypert          #+#    #+#             */
+/*   Updated: 2017/12/01 07:34:27 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		process(t_env *env, t_lst *lst)
+char	*ft_ultoa(unsigned long int n)
 {
-	lst = ftp_parsing(env->format);
-	check_lst(lst);
-//	aff_valid_lst(lst);
-	ft_dispatcher(env, lst);
-	print_list(env, lst);
-	return (env->ret);
+	unsigned long int		tmpn;
+	char	*str;
+	long int len;
+
+	len = 2;
+	tmpn = n;
+	while (tmpn /= 10)
+		len++;
+	if ((str = (char*)malloc(sizeof(char) * len)) == NULL)
+		return (NULL);
+	str[--len] = '\0';
+	while (len--)
+	{
+		str[len] = n % 10 + '0';
+		n = n / 10;
+	}
+	return (str);
 }

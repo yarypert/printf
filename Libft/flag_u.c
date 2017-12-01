@@ -6,7 +6,7 @@
 /*   By: yarypert <yarypert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/04 00:15:58 by yarypert          #+#    #+#             */
-/*   Updated: 2017/10/04 03:48:27 by yarypert         ###   ########.fr       */
+/*   Updated: 2017/12/01 06:14:19 by yarypert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	flag_u_preci(t_env *env, t_lst *lst)
 	if (lst->mode_l == 1)
 		lst->str = ft_strreplace(lst->str, lst->str,
 				precision_int(ft_ultoa_base(va_arg(env->args, unsigned long int), 10), lst->preci));
-	else if (lst->mode_l == 2 || lst->mode_j == 1)
+	else if (lst->mode_l == 2 || lst->mode_j == 1 || lst->mode_z == 1)
 		lst->str = ft_strreplace(lst->str, lst->str,
 				precision_int(ft_ultoa_base(va_arg(env->args, unsigned long long int), 10), lst->preci));
 	else
@@ -42,7 +42,7 @@ void	flag_u_nopreci(t_env *env, t_lst *lst)
 	if (lst->mode_l == 1)
 		lst->str	 = ft_strreplace(lst->str, lst->str,
 				ft_ultoa_base(va_arg(env->args, unsigned long int), 10));
-	else if (lst->mode_l == 2 || lst->mode_j == 1)
+	else if (lst->mode_l == 2 || lst->mode_j == 1 || lst->mode_z == 1)
 		lst->str = ft_strreplace(lst->str, lst->str,
 				ft_ultoa_base(va_arg(env->args, unsigned long long int), 10));
 	else
